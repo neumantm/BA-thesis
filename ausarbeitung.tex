@@ -12,7 +12,7 @@
 %Neue deutsche Trennmuster
 %Siehe http://www.ctan.org/pkg/dehyph-exptl und http://projekte.dante.de/Trennmuster/WebHome
 %Nur für pdflatex, nicht für lualatex
-\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}
+%\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}
 \documentclass[
                fontsize=12pt, %Default: 11pt, bei Linux Libertine zu klein zum Lesen
 % BEGINN: Optionen für typearea
@@ -30,18 +30,18 @@
                headsepline,
                cleardoublepage=empty,
                parskip=half,
-%                pointlessnumbers, %f"ur englische Texte, dann unten \ifdeutsch und \ifenglisch anpassen.
+               pointlessnumbers, %f"ur englische Texte, dann unten \ifdeutsch und \ifenglisch anpassen.
 %               draft    % um zu sehen, wo noch nachgebessert werden muss - wichtig, da Bindungskorrektur mit drin
                final   % ACHTUNG! - in pagestyle.tex noch Seitenstil anpassen
                ]{scrbook}
 
 %Englisch:
-%\let\ifdeutsch\iffalse
-%\let\ifenglisch\iftrue
+\let\ifdeutsch\iffalse
+\let\ifenglisch\iftrue
 
 %Deutsch:
-\let\ifdeutsch\iftrue
-\let\ifenglisch\iffalse
+%\let\ifdeutsch\iftrue
+%\let\ifenglisch\iffalse
 
 
 \input{preambel/packages_and_options}
