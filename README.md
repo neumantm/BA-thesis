@@ -156,7 +156,7 @@ See http://wiki.flupp.de/LaTeX
 * `bibliography.bib`. Bibliography. [biblatex] format. Manage it with [JabRef].
 * content/: Place for the actual content
   * content/introduction.tex: First chapter: The introduction
-  * content/chapter.tex: Second chapter
+  * content/chapter2.tex: Second chapter
   * content/conclusion.tex: Conclusion and outlook.
 * graphics/: Directory containing the figures.
   By using PDFLaTeX it is possible to use PDFs, JPGs, PNGs, ... We recommend to use PDFs to enable smooth scaling.
