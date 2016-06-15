@@ -76,12 +76,12 @@ If you want to compile using the command line, you can use following tools.
 Automatic compilation using latexmk
 -----------------------------------
 
-    latexmk ausarbeitung
+    latexmk thesis
 
 Continuous previewing using latexmk
 -----------------------------------
 
-    latexmk -pvc ausarbeitung
+    latexmk -pvc thesis
 
 This will open a [Sumatra PDF] and only works with the supplied configuration.
 
@@ -120,15 +120,10 @@ Alternatives:
 Tweaks
 ======
 
-Switching to English
---------------------
+Define Title, Author, ..
+------------------------
 
-The template has been built primarily for German documents. English documents, however, are also very welcome.
-
-Five steps to switch to English typesetting:
-
-1. `ausarbeitung.tex`: Exchange commands `\ifdeutsch` and `\ifenglisch`. (Lines 11,12 <-> 15,16).
-1. Cleanup everything (e.g., `latexmk -c ausarbeitung`). Otherwise pdflatex will complain because of `ngerman`.
+The file `preambel/packages_and_options` from line 40 on contains properties like title, author, thesis number, etc. Author and title are set as commands to be able to reuse them (e.g., for the PDF properties).
 
 Change Appearance of Chapter Headings
 -------------------------------------
@@ -152,19 +147,17 @@ See http://wiki.flupp.de/LaTeX
 
 # Contained Files and Directories
 
-* ausarbeitung.tex
+* thesis.tex
   * Main file
   * New chapters are added by using `\input`
-  * Adjust title etc. here
 * Makefile: The Makefile.
 * README.md: This file.
 * uni-stuttgart-cs-cover.sty: Verbatim copy of uni-stuttgart-cs-cover.sty available at https://github.com/latextemplates/uni-stuttgart-computer-science-cover
 * `bibliography.bib`. Bibliography. [biblatex] format. Manage it with [JabRef].
 * content/: Place for the actual content
-  * content/einleitung.tex: First chapter: The introduction
-  * content/kapitel2.tex: Second chapter
-  * content/zusammenfassung`_`und`_`ausblick.tex: Conclusion and outlook.
-  * content/anhang.tex
+  * content/introduction.tex: First chapter: The introduction
+  * content/chapter.tex: Second chapter
+  * content/conclusion.tex: Conclusion and outlook.
 * graphics/: Directory containing the figures.
   By using PDFLaTeX it is possible to use PDFs, JPGs, PNGs, ... We recommend to use PDFs to enable smooth scaling.
 * macros/: Directory for macros.
