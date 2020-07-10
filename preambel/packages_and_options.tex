@@ -35,6 +35,39 @@
 %
 %%%
 
+\PassOptionsToPackage{fleqn,leqno}{amsmath}
+%% EN: Fonts
+%% DE: Schriften
+%%
+%% !!! If you change the font, be sure that words such as "workflow" can
+%% !!! still be copied from the PDF. If this is not the case, you have
+%% !!! to use glyphtounicode. See comment at cmap package
+
+
+% EN: Times Roman for all text
+\ifluatex
+% source: Second proposed fix from the following answer: https://tex.stackexchange.com/a/394137
+\usepackage[no-math]{fontspec}
+\setmainfont{TeXGyreTermes-Regular}[
+BoldFont       = TeXGyreTermes-Bold ,
+ItalicFont     = TeXGyreTermes-Italic ,
+BoldItalicFont = TeXGyreTermes-BoldItalic,
+NFSSFamily     = ntxtlf]
+\setsansfont{TeX Gyre Heros Regular}[
+Scale=.9,
+BoldFont       = TeX Gyre Heros Bold,
+ItalicFont     = TeX Gyre Heros Italic,
+BoldItalicFont = TeX Gyre Heros BoldItalic]
+\setmonofont[StylisticSet={1,3},Scale=.9]{inconsolata}
+\RequirePackage{newtxmath}
+\else
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
+% EN: looks good with times, but no equivalent for lualatex found,
+%     therefore replaced with inconsolata
+%\RequirePackage[zerostyle=b,scaled=.9]{newtxtt}
+\RequirePackage[varl,scaled=.9]{inconsolata}
+\fi
 
 %%%
 % Deckblattstyle
@@ -59,7 +92,7 @@ examiner={Dr.-Ing.\ Andr\'{e} van Hoorn (Prof.-Vertr.)},
 supervisor={Dr.\ Du\v{s}an Okanovi\'{c},\\Teerat Pitakrat,\ M.Sc.},
 startdate={Juli 5, 2013}, % English: July 5, 2013;    ISO: 2013-07-05
 enddate={Januar 5, 2014}, % English: January 5, 2014; ISO: 2014-01-05
-crk={I.7.2}
+%crk={I.7.2}
 ]{uni-stuttgart-cs-cover}
 %
 %%%
