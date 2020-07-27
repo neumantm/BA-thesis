@@ -139,7 +139,7 @@ See http://wiki.flupp.de/LaTeX
 
 # Contained Files and Directories
 
-* thesis.tex
+* main-english.tex
   * Main file
   * New chapters are added by using `\input`
 * Makefile: The Makefile.
