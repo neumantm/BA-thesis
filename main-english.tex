@@ -66,7 +66,7 @@
 %\VerbatimFootnotes %verbatim text in Fußnoten erlauben. Geht normalerweise nicht.
 
 \input{commands}
-\pagenumbering{arabic}
+\pagenumbering{roman}
 \Titelblatt
 
 %Eigener Seitenstil fuer die Kurzfassung und das Inhaltsverzeichnis
@@ -79,17 +79,23 @@
 
 %Kurzfassung / abstract
 %auch im Stil vom Inhaltsverzeichnis
-\ifdeutsch
-  \section*{Kurzfassung}
-\else
-  \section*{Abstract}
-\fi
+%\ifdeutsch
+ % \section*{Kurzfassung}
+%\else
+ % \section*{Abstract}
+%\fi
 
-<Short summary of the thesis>
+%<Short summary of the thesis>
 
+%\cleardoublepage
+
+\section*{Abstract}
+... Short summary of the thesis in English ...
 \cleardoublepage
 
-
+\section*{Kurzfassung}
+... Short summary of the thesis in German ...
+\cleardoublepage
 % BEGIN: Verzeichnisse
 
 \iftex4ht
@@ -153,6 +159,8 @@
 
 % END: Verzeichnisse
 
+\mainmatter
+\pagenumbering{arabic}
 
 % Headline and footline
 \renewcommand*{\chapterpagestyle}{scrplain}
