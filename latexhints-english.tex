@@ -120,8 +120,9 @@ More details about mathematical environments provides the documentation availabl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sourcecode}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\Cref{lst:ListingANDlstlisting} shows how to emmbed source code.
+\Cref{lst:ListingANDlstlisting,helloworld} shows how to emmbed source code.
 With \texttt{\textbackslash lstinputlisting} the source code can be loaded directly from files.
+
 
 %Listing-Umgebung wurde durch \newfloat{Listing} definiert
 \begin{Listing}
@@ -134,6 +135,9 @@ With \texttt{\textbackslash lstinputlisting} the source code can be loaded direc
   \label{lst:ListingANDlstlisting}
 \end{Listing}
 
+
+%TODO: Currently not shown in TOC
+\lstinputlisting[language=C++,label=helloworld,caption={"`hello world"' in C++.},float]{code/helloworld.cpp}
 \begin{filecontents*}{\democodefile}
 Source code is also available in the text \lstinline|<listing />|.
 \end{filecontents*}
