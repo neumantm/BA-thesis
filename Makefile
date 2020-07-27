@@ -12,7 +12,8 @@ editor = gedit
 
 
 # Main file name
-MASTER_TEX = thesis.tex
+<<<<<<< HEAD
+MASTER_TEX = main-english.tex
 LITERATURE = bibliography.bib
 
 

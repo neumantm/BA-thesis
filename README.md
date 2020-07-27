@@ -1,27 +1,19 @@
-[![Build Status](https://travis-ci.org/latextemplates/uni-stuttgart-computer-science-template.svg?branch=template)](https://travis-ci.org/latextemplates/uni-stuttgart-computer-science-template)
+# LaTeX Template for Scientific Theses ![Build Status](https://github.com/latextemplates/scientific-thesis-template/workflows/Build%20with%20lualatex/badge.svg)
 
-About
-=====
+> This template is a general template for scientific theses.
 
-Unoffical LaTeX template for Master, Bachelor, Diploma, and Student Theses at the University of Stuttgart, Computer Science.
+Currently, it is the unofficial LaTeX template for Master, Bachelor, Diploma, and Student Theses.
 
-More information at https://github.com/latextemplates/uni-stuttgart-computer-science-template.
+See [docs/](docs/) or <http://latextemplates.github.io/scientific-thesis-template/> for a documentation of the template.
 
-It originates from the studiforge server at https://vorlagen.studiforge.informatik.uni-stuttgart.de/trac/
+## License
 
-Quick start
------------
-If you don't want to use git, just download https://github.com/latextemplates/uni-stuttgart-computer-science-template/archive/template.zip
+The license of this work is [CC0](https://creativecommons.org/publicdomain/zero/1.0/), which corresponds to "public domain".
 
-Recommended LaTeX environments
-------------------------------
-* offline: Grammar and spell checking is available at [TeXstudio].
-  Please download [LanguageTool] and [configure TeXstudio to use it](http://wiki.languagetool.org/checking-la-tex-with-languagetool#toc4).
-  Note that it is enough to point to `languagetool.jar`.
-  Use [JabRef] to manage your bibliography.
-* online: [overleaf]. Also with [git support](https://www.overleaf.com/blog/195-new-collaborate-online-and-offline-with-overleaf-and-git-beta#.VYFC2UZejkU).
+### Exceptions
 
-See [LaTeX Editors/IDEs question on TeX.SX](http://tex.stackexchange.com/questions/339/latex-editors-ides) for a complete list of LaTeX editors.
+The images in `logos` are subject to other copyright from other parties:
+
 
 ### Recommended setup of MiKTeX
 * Install MiKTeX for: "Only for: `username`"
@@ -157,17 +149,12 @@ See http://wiki.flupp.de/LaTeX
 * content/: Place for the actual content
   * content/introduction.tex: First chapter: The introduction
   * content/chapter2.tex: Second chapter
+  * content/chapter3.tex: Related work
   * content/conclusion.tex: Conclusion and outlook.
 * graphics/: Directory containing the figures.
   By using PDFLaTeX it is possible to use PDFs, JPGs, PNGs, ... We recommend to use PDFs to enable smooth scaling.
 * macros/: Directory for macros.
   * macros/commands.tex: Example macros
-* preambel/: Latex header of the document ("preambel" in latex)
-  * preambel/chapterheads.tex: Definition for the chapter headings.
-  * preambel/fonts.tex: Font selection
-  * preambel/margins.tex: Margin settings / Einstellung der Seitenränder
-  * preambel/packages`_`and`_`options.tex: Includes required packages and their options.
-  * preambel/pagestyle.tex: Defines the head and the foot of a page.
 
  [biber]: https://www.ctan.org/pkg/biber
  [biblatex]: http://tex.stackexchange.com/tags/biblatex/info
@@ -179,3 +166,4 @@ See http://wiki.flupp.de/LaTeX
  [overleaf]: https://www.overleaf.com/
  [Sumatra PDF]: http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader-de.html
  [TeXstudio]: http://texstudio.sourceforge.net/
+
