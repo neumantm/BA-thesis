@@ -68,12 +68,12 @@ If you want to compile using the command line, you can use following tools.
 Automatic compilation using latexmk
 -----------------------------------
 
-    latexmk thesis
+    latexmk main-english
 
 Continuous previewing using latexmk
 -----------------------------------
 
-    latexmk -pvc thesis
+    latexmk -pvc main-english
 
 This will open a [Sumatra PDF] and only works with the supplied configuration.
 
