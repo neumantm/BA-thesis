@@ -115,12 +115,13 @@ Tweaks
 Define Title, Author, ..
 ------------------------
 
-The file `preambel/packages_and_options` from line 40 on contains properties like title, author, thesis number, etc. Author and title are set as commands to be able to reuse them (e.g., for the PDF properties).
+The file `main-english` contains properties like title, author, thesis number, etc. Author and title can be set as commands to be able to reuse them (e.g., for the PDF properties).
+* \newcommand{\docauthor}{Author's name}
+* \newcommand{\doctitle}{Thesis title}
 
 Change Appearance of Chapter Headings
 -------------------------------------
 
-Edit `preambel/chapterheads.tex`.
 
 Final version
 -------------
