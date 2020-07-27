@@ -153,8 +153,8 @@ See http://wiki.flupp.de/LaTeX
   * content/conclusion.tex: Conclusion and outlook.
 * graphics/: Directory containing the figures.
   By using PDFLaTeX it is possible to use PDFs, JPGs, PNGs, ... We recommend to use PDFs to enable smooth scaling.
-* macros/: Directory for macros.
-  * macros/commands.tex: Example macros
+* commands.tex: File for macros.
+  * commands.tex: Example macros
 
  [biber]: https://www.ctan.org/pkg/biber
  [biblatex]: http://tex.stackexchange.com/tags/biblatex/info
