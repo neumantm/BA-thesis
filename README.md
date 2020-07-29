@@ -68,12 +68,12 @@ If you want to compile using the command line, you can use following tools.
 Automatic compilation using latexmk
 -----------------------------------
 
-    latexmk thesis
+    latexmk main-english
 
 Continuous previewing using latexmk
 -----------------------------------
 
-    latexmk -pvc thesis
+    latexmk -pvc main-english
 
 This will open a [Sumatra PDF] and only works with the supplied configuration.
 
@@ -115,12 +115,13 @@ Tweaks
 Define Title, Author, ..
 ------------------------
 
-The file `preambel/packages_and_options` from line 40 on contains properties like title, author, thesis number, etc. Author and title are set as commands to be able to reuse them (e.g., for the PDF properties).
+The file `main-english` contains properties like title, author, thesis number, etc. Author and title can be set as commands to be able to reuse them (e.g., for the PDF properties).
+* \newcommand{\docauthor}{Author's name}
+* \newcommand{\doctitle}{Thesis title}
 
 Change Appearance of Chapter Headings
 -------------------------------------
 
-Edit `preambel/chapterheads.tex`.
 
 Final version
 -------------
@@ -139,7 +140,7 @@ See http://wiki.flupp.de/LaTeX
 
 # Contained Files and Directories
 
-* thesis.tex
+* main-english.tex
   * Main file
   * New chapters are added by using `\input`
 * Makefile: The Makefile.
@@ -153,8 +154,8 @@ See http://wiki.flupp.de/LaTeX
   * content/conclusion.tex: Conclusion and outlook.
 * graphics/: Directory containing the figures.
   By using PDFLaTeX it is possible to use PDFs, JPGs, PNGs, ... We recommend to use PDFs to enable smooth scaling.
-* macros/: Directory for macros.
-  * macros/commands.tex: Example macros
+* commands.tex: File for macros.
+  * commands.tex: Example macros
 
  [biber]: https://www.ctan.org/pkg/biber
  [biblatex]: http://tex.stackexchange.com/tags/biblatex/info
