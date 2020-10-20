@@ -1,0 +1,29 @@
+- Introduction
+  - Problem Statement
+  - Approach
+  - Structure
+- Foundations and Related Work
+  - Issue Management for Multi-Component Architectures
+  - IDE Integration
+- Concept
+  - Requirements
+    - Requirements for the IDE Plugin
+    - Requirements for the Icons of Issues
+  - Concept Overview
+- Design and Implementation
+  - Icon Compositing
+  - Plugin Architecture
+    - Layered Architecture
+    - Model Driven Approach
+  - Plugin User Interface
+- Validation
+  - Overview
+  - Validation Goals and Question Metrics
+  - Expert Survey
+    - Design and Realization
+    - Results
+  - Discussion of results
+  - Threats to Validaity (?)
+- Conclusion and Future Work
+  - Results and conclusion
+  - Possible Improvements and further Research

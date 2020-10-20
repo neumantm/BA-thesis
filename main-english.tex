@@ -1,3 +1,4 @@
+% !TeX document-id = {54d2d254-7585-48d2-9f78-dac02ef9b770}
 % !TeX spellcheck = en-US
 % !TeX encoding = utf8
 % !TeX program = lualatex
@@ -29,15 +30,15 @@
 
 
 \usepackage[
-  title={Is Oil the future?},
-  author={Lars K.},
+  title={IDE Support of Issue Management for Multi-Component Architectures},
+  author={Tim Neumann},
   type=bachelor,
   institute=istesqa, % or other institute names - or just a plain string using {Demo\\Demo...}
   course={Softwaretechnik},
-  examiner={Prof.\ Dr.\ Uwe Fessor},
-  supervisor={Dipl.-Inf.\ Roman Tiker,\\Dipl.-Inf.\ Laura Stern,\\Otto Normalverbraucher,\ M.Sc.},
-  startdate={July 5, 2018},
-  enddate={January 5, 2019}
+  examiner={Prof. Dr.-Ing. Steffen Becker},
+  supervisor={Dr. rer. nat. Uwe Breitenbücher,\\ Sandro Speth, M.Sc.},
+  startdate={March 18, 2020},
+  enddate={Novemver 17, 2020}
 ]{uni-stuttgart-cs-cover}
 
 \input{acronyms}
@@ -90,11 +91,11 @@
 %\cleardoublepage
 
 \section*{Abstract}
-... Short summary of the thesis in English ...
+\lipsum[1-1]
 \cleardoublepage
 
 \section*{Kurzfassung}
-... Short summary of the thesis in German ...
+\lipsum[2-2]
 \cleardoublepage
 % BEGIN: Verzeichnisse
 
@@ -203,7 +204,7 @@
 
 
 
-
+\todo{Check includes for todo comments}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -214,17 +215,18 @@
 
 
 \input{content/introduction}
-\input{content/chapter2}
-\input{content/chapter3}
-
+\input{content/foundations_and_related_work}
+\input{content/concept}
+\input{content/design_and_implementation}
+\input{content/evaluation}
 \input{content/conclusion_and_future_work}
 
 \printbibliography
 
-All links were last followed on March 17, 2018.
+All links were last followed on August 17, 2020.
 
 \appendix
-\input{latexhints-english}
+%\input{latexhints-english}
 
 \pagestyle{empty}
 \renewcommand*{\chapterpagestyle}{empty}
