@@ -1,28 +1,6 @@
 % !TeX spellcheck = en_US
 
 \chapter{Introduction}
-New software today is often based on a microservice architecture.
-Such software consists of many small independent services, all fulfilling a small portion of the complete task.
-Often these services are implemented in many software projects by multiple teams.
-As with any software development process it is advisable to have some kind of issue management solution as well as a way to document any major design decisions.
-Furthermore, documenting the interfaces between the services may even be more important than documenting the interfaces between components of a typical application.
-
-However as the documentation and issues are spread over multiple projects and each may affect more than one project there are several challenges to managing these documents and issues effectively.
-For example changes to documentation may not be propagated to all teams. Another example is, that issues found by one team may have the same root cause as issues found by another team, however, the root cause may even be caused by a piece of code of a third team.
-
-One possible approach to deal with this problem is introduced in \cite{Speth2019}.
-The proposed solution are so-called multi-project coding issues. These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. Additionally, traceability links between multiple issues and artifacts are proposed. As a concrete syntax a graphical notation for these issues and links is introduced and implemented in a prototype framework. The frontend of this framework is a web-based application with an architecture graph at its core.
-This graph is used to view and edit the system architecture and issues displayed with the introduced notation. 
-The system is a supportive tool for software architects and project managers to keep an overview over the services and dependencies between those and as well as the current issues and their influence on all components. 
-
-Even though this tool can be used by developers, it is rarely necessary for a developer to look at the whole system. It is more important that developers understand what parts of the system depend on the piece of source code they are working on and which other components may influence the behavior of it. Similarly, when working on an issue a developer does not need to look at all issues of the complete system, but only at those, which may be a cause or an effect of the one being worked on. Finally, it should be as easy as possible for developers to create a new issue, think about and discuss how it may relate to other issues, and write down their findings. A web-app,  which needs to be opened, the correct service selected, and the relevant file searched are all obstacles, which may impede a developer during this process. 
-
-To disrupt the workflow of a developer as little as possible and remove most of these obstacles, it would be beneficial to integrate this approach into the developer's \gls{IDE}. There he could be shown all issues attached to a file or service as well as issues in components depending on it. Furthermore, he could be enabled to create issues for the code he's currently looking at and he could be aided in referencing any other relevant issues. 
-
-\todo{This is not the proposal anymore}
-Therefore, this thesis following paper proposes a bachelor's thesis investigating development of an \ac{IDE} plugin for the successor of the  platform presented in \cite{Speth2019}, which is currently being developed by Speth. For this, a prototype Eclipse plugin integrating with this framework is planned.
-
-This proposal is structured as follows: First, \autoref{ch:foundation} will introduce the foundations and related work for the thesis. Then, \autoref{ch:concept} will present the concept of what will be done, including the general approach and what will be implemented. Finally, \autoref{ch:organization} will discuss some organizational details such as scheduling and risk management.
 
 \section*{Thesis Structure}
 %Die Arbeit ist in folgender Weise gegliedert:
