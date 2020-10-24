@@ -37,8 +37,8 @@
   course={Softwaretechnik},
   examiner={Prof. Dr.-Ing. Steffen Becker},
   supervisor={Dr. rer. nat. Uwe Breitenbücher,\\ Sandro Speth, M.Sc.},
-  startdate={March 18, 2020},
-  enddate={Novemver 17, 2020}
+  startdate={March 23, 2020},
+  enddate={Novemver 11, 2020}
 ]{uni-stuttgart-cs-cover}
 
 \input{acronyms}
@@ -128,8 +128,8 @@
 % \addtocontents{toc}{\protect\newpage}
 % an der passenden Stelle im Fließtext erzwungen werden.
 
-\listoffigures
-\listoftables
+%\listoffigures %TODO enable if used
+%\listoftables %TODO enable if used
 
 %Wird nur bei Verwendung von der lstlisting-Umgebung mit dem "caption"-Parameter benoetigt
 %\lstlistoflistings 
@@ -137,7 +137,7 @@
 \ifdeutsch
   \listof{Listing}{Verzeichnis der Listings}
 \else
-  \listof{Listing}{List of Listings}
+%  \listof{Listing}{List of Listings} %TODO enable if used
 \fi
 
 %mittels \newfloat wurde die Algorithmus-Gleitumgebung definiert.
@@ -145,7 +145,7 @@
 \ifdeutsch
   \listof{Algorithmus}{Verzeichnis der Algorithmen}
 \else
-  \listof{Algorithmus}{List of Algorithms}
+%  \listof{Algorithmus}{List of Algorithms} %TODO enable if used
 \fi
 %\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
 
@@ -204,7 +204,7 @@
 
 
 
-\todo{Check includes for todo comments}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
