@@ -6,7 +6,7 @@ The goal of this work is to evaluate the usefulness of an \gls{IDE} integration 
 This chapter describes the approach taken in this thesis for archiving that goal.
 At the heart of the concept is the plan to develop a prototype issue management plugin for one \gls{IDE},
 which integrates into the Gropius system.
-This tool can then be used in the evaluation by presenting to experts of the field for a review.
+This tool can then be used in the evaluation by presenting to experts in the field for a review.
 
 The first step was to gather requirements for that prototype. 
 This requirements engineering process as well as its results are described in \cref{sec:ch3:s1}.
@@ -19,7 +19,7 @@ a rough concept of the prototype tool was made before continuing with the design
 \section{Analysis and Requirements Engineering}
 \label{sec:ch3:s1}
 To gather requirements for the plugin prototype a process with six steps as shown in \cref{fig:requirmentsProcess} was used.
-This process can be split into two stages, each with the three activities of requirements elicitation, specification and validation.
+This process can be split into two stages, each with the three activities of requirements elicitation, specification, and validation.
 
 \begin{figure}[!h]
 	\centering
@@ -88,29 +88,29 @@ This process can be split into two stages, each with the three activities of req
 	\label{fig:requirmentsProcess}
 \end{figure}
 
-As the first step of the first stage a preliminary requirements elicitation was performed. 
-For this, internal brainstorming and discussion with the thesis' supervisors was used.
-Next the resulting requirements were incorporated into the paper for the thesis proposal, 
+As the first step of the first stage, a preliminary requirements elicitation was performed. 
+For this, internal brainstorming and discussion with the thesis' supervisors were used.
+Next, the resulting requirements were incorporated into the paper for the thesis proposal, 
 which serves as the first requirements specification.
 After this, the primary requirements validation was performed. 
 The positive feedback for that proposal paper was one of the signs that the requirements are valid.
 Additionally, the discussion and feedback after the thesis proposal presentation was also used to validate the requirements.
 
-Then a second stage of requirements elicitation was performed using the requirements from the first elicitation, 
+Then the second stage of requirements elicitation was performed using the requirements from the first elicitation, 
 the results from the validation as well as the results of a stakeholder interview.
-For this interview the general concept of Gropius as well as of this thesis was sent to representatives of each group of stakeholders. 
+For this interview, the general concept of Gropius as well as of this thesis was sent to representatives of each group of stakeholders. 
 They were then asked for their requirements with the help of two questions.
 The first question asked for features expected from an issue management plugin in general,
-the second for those, which the representatives would expect from such plugin, which integrates into Gropius.
+the second for those, which the representatives would expect from such a plugin, which integrates into Gropius.
 
 As the prototype is a new tool for an unfinished system, only three groups of stakeholders could be identified:
-First the potential users, in this case developers working with multi component systems.
+First, the potential users, in this case developers, working with multi-component systems.
 Various members of the department for software quality and architecture were contacted as representatives of this group.
-Second the thesis' supervisors to ensure the scientific scope of the work. 
-Third Sandro Speth as author of the Gropius system \cite{speth2020gropius}.
+Second, the thesis' supervisors to ensure the scientific scope of the work. 
+Third, Sandro Speth as the author of the Gropius system \cite{speth2020gropius}.
 
-Next the gathered requirements were formally specified as user stories in the requirements document.
-Finally this document was validated by a review from the thesis' supervisors.
+Next, the gathered requirements were formally specified as user stories in the requirements document.
+Finally, this document was validated by a review from the thesis' supervisors.
 
 
 \subsection*{Gathered Requirements}
@@ -119,12 +119,12 @@ These requirements are listed below, split into those expected from any issue ma
 
 \newcounter{enumarteCounter} % For saving the counter between the two enumerates
 
-First the requirements expected from any issue management plugin:
+First, the requirements expected from any issue management plugin:
 \begin{enumerate}
 	\item As a developer I want to have a list of all open issues. \label{itm:ch3:req:filter_open}
 	\item As a developer I want to have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
 	\item As a developer I want to have a searchable list of issues. \label{itm:ch3:req:filter_search}
-	\item As a developer I want to have a list of issues which can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
+	\item As a developer I want to have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
 	\item As a developer I want to have a list of issues which can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
 	\item As a developer I want to have a list of issues which can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
 	\item As a developer I want to quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
@@ -150,7 +150,7 @@ These are the requirements expected from such a plugin integrated into Gropius:
 
 \section{Issue Icons}
 \label{sec:ch3:s2}
-For the requirements \ref{itm:ch3:req:list_issue_type} and \ref{itm:ch3:req:source_file_marker} it is useful to have icons for each issue.
+For requirements \ref{itm:ch3:req:list_issue_type} and \ref{itm:ch3:req:source_file_marker}, it is useful to have icons for each issue.
 Especially for requirement \ref{itm:ch3:req:list_issue_type} the icons can not all be the same but need to carry some information.
 Therefore, a concept was made about which properties should be visualized in these icons.
 
@@ -187,12 +187,12 @@ as long as it supports java-based plugins.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{graphics/concept_mockup_issueList.png}
-	\caption{Mock0up for Issue List}
+	\caption{Mock-up for Issue List}
 	\label{fig:c3:mockup_issueList}
 \end{figure}
 The issue list is a table of issues with columns for the various properties of those, 
-similar to the one shown in the mock-up on \cref{fig:c3:mockup_issueList}.
-In the first column the icon for the issue is shown followed by the title.
+similar to the one shown in the mock-up in \cref{fig:c3:mockup_issueList}.
+In the first column, the icon for the issue is shown followed by the title.
 This table allows filtering by various attributes of the issues.
 To satisfy requirements \ref{itm:ch3:req:filter_open} to \ref{itm:ch3:req:filter_open_file} it supports at least filtering
 by issue state, assignee, text contained in the title or description, 
@@ -208,11 +208,11 @@ Finally, the visible columns can also be configured by the user.
 \end{figure}
 The issue details \gls{UI} element shows all attributes for the issue selected in the issue list.
 A mock-up of it can be seen in \cref{fig:c3:mockup_issueDetails}.
-At the top of the form the icon of the issue is displayed.
+At the top of the form, the icon of the issue is displayed.
 The related issues are links, which, when clicked, change the issue list selection to the corresponding issue.
 Furthermore, the displayed locations are also links, which open the correct resource in the \gls{IDE}'s editor.
 Additionally, this element supports editing the issue, either by opening a dialog or by allowing to edit the values in the element itself like a form.
-In both cases additional dialogs are used to allow editing the more complex attributes. 
+In both cases, additional dialogs are used to allow editing of the more complex attributes. 
 
 \begin{figure}[!h]
 	\centering
@@ -220,12 +220,12 @@ In both cases additional dialogs are used to allow editing the more complex attr
 	\caption{Mock-up for Issue Markers}
 	\label{fig:c3:mockup_issueMarkers}
 \end{figure}
-Moreover the issues are displayed as markers in the \gls{IDE}'s editor, whenever a file with issues is open in the editor.
+Moreover, the issues are displayed as markers in the \gls{IDE}'s editor, whenever a file with issues is open in the editor.
 This can be seen in the mock-up in \cref{fig:c3:mockup_issueMarkers}. 
 For these the icons from \cref{sec:ch3:s2} are used, if the \gls{IDE} supports it.
 
 Additionally, there are two ways to create a new issue.
-First, there is a button somewhere, which creates an new empty issue, 
+First, there is a button somewhere, which creates a new empty issue, 
 optionally opening a dialog to enter details for the new issue.
 Second, it is possible to mark some lines in the editor and create a new issue for them.
 In this case, the new issue already has the correct location selected.
@@ -244,4 +244,4 @@ Each user has a separate topic in the messaging component, preventing undesirabl
 In addition to this, special topics for example for meetings are a possibility, 
 such that one developer can select an issue and the same is selected for all other participants of the meeting. 
 \cref{fig:c3:concept_gropius_messaging} shows the basic architecture planned for this feature. 
-The plugin as well as the web user interface communicate with the back-end through a \gls{REST} \gls{API} and with each other using a messaging component.
+The plugin, as well as the web user interface, communicate with the back-end through a \gls{REST} \gls{API} and with each other using a messaging component.
