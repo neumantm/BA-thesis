@@ -4,9 +4,9 @@
 \label{chap:ch3}
 The goal of this work is to evaluate the usefulness of an \gls{IDE} integration for the Gropius system \cite{speth2020gropius}.
 This chapter describes the approach taken in this thesis for archiving that goal.
-At the heart of the concept is the plan to develop a prototype plugin for one \gls{IDE}.
-This prototype should be an issue management plugin, which integrate into the Gropius system.
-It can then be used in the evaluation by presenting to experts of the field for a review.
+At the heart of the concept is the plan to develop a prototype issue management plugin for one \gls{IDE},
+which integrates into the Gropius system.
+This tool can then be used in the evaluation by presenting to experts of the field for a review.
 
 The first step was to gather requirements for that prototype. 
 This requirements engineering process as well as its results are described in \cref{sec:ch3:s1}.
@@ -14,7 +14,7 @@ As visualizing details about an issue in the corresponding icon is a key part of
 the next step was to determine which properties to visualize and how.
 The resulting concept for the icons is explained in \cref{sec:ch3:s2}.
 Finally, as described in \cref{sec:ch3:s3}, 
-a rough concept of the prototype plugin was made before continuing with the design and implementation.
+a rough concept of the prototype tool was made before continuing with the design and implementation.
 
 \section{Analysis and Requirements Engineering}
 \label{sec:ch3:s1}
@@ -164,18 +164,25 @@ The following properties were chosen to be visualized with decreasing priority.
 	\item Does this issue cause problems in other projects?
 	\item Is this issue just a symptom of another issue elsewhere?
 	\item Is the issue assigned to the viewing developer?
+	\item Is the issue new or work in progress or done?
 \end{itemize}
+Finally, another aspect, that could be visualized is the visibility of the issue as some \glspl{IMS} can have issues that are only visible internally.
+But it was decided against it for now, as it didn't seem that important of a property and the Gropius system currently doesn't support it anyway.
 
 \section{Prototype Plugin}
 \label{sec:ch3:s3}
-Before starting with the detailed design and implementation of the plugin prototype, a rough concept for it needed to be created.
+Before starting with the detailed design and implementation of the prototype tool, a rough concept for it needed to be created.
 Most parts of this were already done during the thesis' proposal process and a version of this concept was included in the proposal paper.
 Therefore, the feedback for the paper and the presentation in front of the department was a confirmation, that the general concept is reasonable.
 
 According to the concept, the plugin consists of two main \gls{UI} elements: The issue list and the issue details element.
 These are complemented by various dialogs and other features described below.
 The plugin uses the \gls{API} of the Gropius system \cite{speth2020gropius} to retrieve its data and perform any modifications on it.
-Furthermore, the plugin is designed as a layered architecture, such that the amount of work to port it for another \gls{IDE} would be minimal.
+Furthermore, the plugin is split into multiple components, 
+of which only one is specific to the supported \gls{IDE} 
+and the others are reusable for other \glspl{IDE} with minimal changes.
+That way the amount of work to port it for another \gls{IDE} is minimized,
+as long as it supports java-based plugins.
 
 \begin{figure}[!h]
 	\centering
@@ -202,7 +209,7 @@ Finally, the visible columns can also be configured by the user.
 The issue details \gls{UI} element shows all attributes for the issue selected in the issue list.
 A mock-up of it can be seen in \cref{fig:c3:mockup_issueDetails}.
 At the top of the form the icon of the issue is displayed.
-The linked issues are links, which, when clicked, change the issue list selection to the corresponding issue.
+The related issues are links, which, when clicked, change the issue list selection to the corresponding issue.
 Furthermore, the displayed locations are also links, which open the correct resource in the \gls{IDE}'s editor.
 Additionally, this element supports editing the issue, either by opening a dialog or by allowing to edit the values in the element itself like a form.
 In both cases additional dialogs are used to allow editing the more complex attributes. 
@@ -230,7 +237,7 @@ In this case, the new issue already has the correct location selected.
 	\label{fig:c3:concept_gropius_messaging}
 \end{figure}
 
-Finally, the plugin is connected to the existing web \gls{UI} with the help of a messaging component.
+Finally, the tool is connected to the existing web \gls{UI} with the help of a messaging component.
 That way it is possible to enable synchronization between the plugin and the web user interface, 
 such that selecting an issue in one will cause the other to also jump to the same issue and select it accordingly. 
 Each user has a separate topic in the messaging component, preventing undesirable interaction between multiple users. 
