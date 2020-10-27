@@ -2,11 +2,96 @@
 
 \chapter{Evaluation}
 \label{chap:ch5}
+For evaluating the usefulness of the prototype an expert review and survey is performed.
+To acquire the questions for this survey a process based on the \gls{GQM} approach introduced by \cite{caldiera1994goal} is used.
+The results from that are shown in \cref{sec:ch5:s1}.
+\Cref{sec:ch5:s2} describes the design and realization as well as the results of the expert review and survey.
+In \cref{sec:ch5:s3} the results of the survey as well as the validity of the thesis are discussed.
+Finally, the identified threats to this validity are described in \cref{sec:ch5:s4}.
 
 \section{GQM}
+\label{sec:ch5:s1}
+The process described in this section does not exactly follow the \gls{GQM} approach introduced by \cite{caldiera1994goal},
+but is based on it.
+The objective of the process is to find good questions, which can be used to evaluate the success of this thesis.
+Based on these questions the expert survey can then be performed.
+
+The first step, is to identify the goals of the work.
+For this thesis the following could be identified as the primary and only goal \textbf{(G1)}:
+Improve the efficiency, effectiveness, and convenience for developers when working with issues in the Gropius environment during their software development process. 
+
+Next, questions have to be found, which can be used to evaluate, whether that goal is reached.
+For that purpose the following three questions could be identified:
+\begin{itemize}
+	\item[\textbf{Q1}] What problems do developers face when working with issues affecting multiple independent projects during the software development/engineering process?
+	\item[\textbf{Q2}] Which of these problems does this thesis's tool solve and to which degree?
+	\item[\textbf{Q3}] Can the industry imagine using such a tool in production?
+\end{itemize}
+
+As it was clear from the start, that an expert review and survey would be conducted, no metrics need to be found for these questions.
+However, it must be investigated if an expert review is a reasonable metric for these questions.
+For \textbf{Q1} an expert survey is a reasonable metric, if the experts are developers, who currently work are have worked in a field with multiple independent projects or have enough experience to put them self into that situation.
+It is an adequate metric for \textbf{Q2}, if the experts fulfill the conditions above and have used the thesis' tool or at least were given an introduction about the features of the tool.
+An expert survey is a reasonable metric for \textbf{Q3}, if the experts are or have been working in the industry and fulfill the above conditions.
+
+Therefore, the evaluation metric (\textbf{M1}) for all questions is an expert review and survey with the correct experts, who are introduced to \gls{GropiusEI}. 
+
 \section{Expert Survey}
+\label{sec:ch5:s2}
+The main element of this evaluation is the expert survey, where selected experts answer a set of prepared questions. 
+But first an expert review of \gls{GropiusEI} is performed.
+This makes sure the experts know the tool and its features and has the additional benefit of direct feedback about the prototype.
+The process of the review and survey is explained in \cref{ssec:ch5:ss2.1}.
+The results from both are presented in \cref{ssec:ch5:ss2.2}.
+
 \subsection{Design and Realization}
+\label{ssec:ch5:ss2.1}
+To perform an expert review and survey, first a group of experts has to be found.
+To achieve this various developers from academia and industry were contacted and asked to participate in this review.
+If they were generally interested, the thesis' concept and the procedure of the review and survey were explained to them.
+In total 21 experts where contacted, of which 12 agreed to take part.
+
+As preparation for the expert review, a detailed guide on installing \gls{GropiusEI} was produced
+to ensure experts could install it on their own device if they wanted.
+Additionally, a scenario was created, in which experts could test the tool in as real as possible conditions.
+This scenario consists of an eclipse workspace with a java-based demo software using multiple components \footnote{\url{https://github.com/eventuate-tram/eventuate-tram-examples-customers-and-orders}} and a \gls{GropiusEI} data file.
+This data file contains the correct components and interfaces for the workspace as well as some developers and labels in addition to
+a number of invented issues.
+These issues are as realistic as possible with a title that could be found in a live \gls{IMS} somewhere, a feasible text body,
+typical labels, sometimes linked issues, and most with at least one location in the workspace.
+Furthermore, a few tasks were prepared, which were used to introduce each feature to the expert.
+These tasks were typical things a developer would need to do during his workday like finding an issue in the code are creating a new issue.
+For each task a detailed explanation, how the task can be done using \gls{GropiusEI} is also included. 
+
+After an expert agreed to participate they were provided with three options for executing the expert review and asked which they preferred.
+The first option was to install the tool and the scenario on their own device with the help of the mentioned installation guide.
+Then an online meeting would be scheduled, such that the tasks from the scenario could be completed while I watch with the help of a screen sharing solution. That way I could help the experts with any problems and directly answer questions as well as guide them through the prepared tasks instead of sending the tasks.
+The second option was, that the expert installs both on their own device and go through the scenario doing the tasks on their own.
+In this case, they were sent the tasks including the explanations in a written document.
+The last option was, that I would present the tool in an online meeting using screen sharing tools. That way the expert did not need to install anything on their device. For that reason, this was also the fastest option. On the other hand, the expert could not use the tool himself, but just watch me do the tasks.
+In every case, the expert was asked for general feedback.
+
+After an expert completed the review he was sent the following questions and asked to answer them:
+\begin{enumerate}
+	\item What do you see as the most significant problems when working with issues affecting multiple independent projects during your software development/engineering process? \label{itm:ch5:expert_questions_problems}
+	\item Do you think the following points represent problems or challenges of existing issue management systems you face as a developer? \label{itm:ch5:expert_questions_are_these_problems}
+	\subitem The lack or insufficient support of linking issues to multiple specific software development artefacts accurate to the line, especially if the artifacts are part of multiple independent projects.
+	\subitem The lack or insufficient support of linking issues to each other
+	\subitem The lack or inadequate support of navigating from one to the next issue through the chain of related or dependent issues.
+	\item For which of these problems (from points 1 and 2) would you say Gropius EI completely solves them? \label{itm:ch5:expert_questions_solve}
+	\item For which of these problems (from points 1 and 2) would you say Gropius EI reduces them? \label{itm:ch5:expert_questions_reduce}
+	\subitem How far would you say are each of these problems reduced?
+	\item Could you imagine to use Gropius EI in your day-to-day business?
+\end{enumerate}
+These questions are based on the evaluation questions \textbf{Q1} to \textbf{Q3} presented in \cref{sec:ch5:s1}.
+Question \ref{itm:ch5:expert_questions_are_these_problems} was added in order to get good answers to questions \ref{itm:ch5:expert_questions_solve} and \ref{itm:ch5:expert_questions_reduce} even if the expert did not find a lot of answers to question \ref{itm:ch5:expert_questions_problems}.
+The points for question \ref{itm:ch5:expert_questions_are_these_problems} were conceived in an internal brainstorming session.
+
 \subsection{Results}
+\label{ssec:ch5:ss2.2}
+%Of the 12 experts, who agreed to participate, a total of $x$ reviewed the tool and $y$ answered the prepared questions in the end. \todo{Insert correct numbers}
 \section{Discussion and Validation}
+\label{sec:ch5:s3}
 \section{Threats to Validity}
+\label{sec:ch5:s4}
 
