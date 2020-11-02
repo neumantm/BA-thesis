@@ -1,13 +1,60 @@
 % Hier stehen alle Abkürzungen
-\newacronym{IDE}{IDE}{integrated development environment}
-\newacronym{UI}{UI}{user interface}
+\newacronym{IDE}{IDE}{Integrated Development Environment}
+\newacronym{UI}{UI}{User Interface}
 \newacronym{API}{API}{Application Programming Interface}
-\newacronym{REST}{REST}{Representational state transfer}
-\newacronym[plural={IMS}, \glsshortpluralkey={IMS}]{IMS}{IMS}{issue management system}
+\newacronym{REST}{REST}{Representational State Transfer}
+\newacronym[plural={IMS}, \glsshortpluralkey={IMS}]{IMS}{IMS}{Issue Management System}
 \newacronym{PNG}{PNG}{Portable Network Graphics}
 \newacronym{UML}{UML}{Unified Modeling Language}
-\newacronym{EMF}{EMF}{Eclipse Modeling Framework}
-\newacronym{GropiusEI}{Gropius EI}{Gropius Eclipse Integration}
 \newacronym{GQM}{GQM}{Goal Question Metric}
+\newacronym{MDSD}{MDSD}{Model-Driven Software Development}
+\newacronym{DSL}{DSL}{Domain-specific Language}
 
-%\newacronym[plural={RDBMS},shortplural={RDBMS}]{rdbms}{RDBMS}{Relational Database Management System}
+\newglossaryentry{Eclipse}
+{
+	name=Eclipse,
+	description={refers to a well known IDE but is also the name of the software foundation mainatining it},
+	see={IDE},
+}
+
+%\newacronym{EMF}{EMF}{A \gls{Eclipse} Modeling Framework}
+%\newacronym[sort=EMF]{EMF}{EMF}{\acrshort{Eclipse} Modeling Framework}
+\newacronym[see={Eclipse}]{EMF}{EMF}{Eclipse Modeling Framework}
+%\newacronym{EMF}{EMF}{Eclipse Modeling Framework}
+
+
+\newglossaryentry{Parsley}
+{
+	name={EMF Parsley},
+	description={is an EMF based UI framework for Eclipse plugins},
+	see={EMF,UI,Eclipse},
+}
+
+\newglossaryentry{Gropius}
+{
+	name=Gropius,
+	description={is a tool for managing cross-component issues introduced by \cite{speth2020gropius}},
+}
+
+%\newacronym[sort={Gropius EI}]{GropiusEI}{\gls{Gropius} EI}{\gls{Gropius} \gls{Eclipse} Integration}
+%\newacronym{GropiusEI}{\gls{Gropius} EI}{\gls{Gropius} Eclipse Integration}
+
+\newglossaryentry{GropiusEI}
+{
+	name=Gropius EI,
+	description={is short for Gropius Eclipse Integration and the name of the tool developed for this thesis},
+	first={Gropius Eclipse Integration (Gropius EI)},
+	see={Eclipse,Gropius}
+}
+
+\newglossaryentry{graphql}
+{
+	name=GraphQL,
+	description={is a query language devleoped by Facebook, used for querying data from servers},
+}
+
+\newglossaryentry{java}
+{
+	name=Java,
+	description={refers to the programming language originally devloped by Sun Microsystems},
+}

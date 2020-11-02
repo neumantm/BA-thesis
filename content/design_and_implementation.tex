@@ -83,10 +83,9 @@ Ecore is the metamodel to represent models in the \gls{EMF} world \cite{steinber
 
 The plugin \lstinline|api-binding| is responsible for all communication with the Gropius back-end through the Gropius \gls{API}.
 Additionally, it converts between the data format defined in the \lstinline|data| plugin in the format used by the \gls{API}.
-The \gls{API} provided by the Gropius system is a GraphQL \gls{API}.
-GraphQL is a query language developed by Facebook, where the client needs to specify the parts of data to return \cite{grpahql2018}.
-Furthermore, changed data can not just be sent to the server to be updated, but the changes must be recorded and split into so-called mutations,
-which can then be sent to the server.
+As mentioned in \cref{ssec:ch2:ss1.2}, the \gls{API} provided by the Gropius system uses \gls{graphql}.
+Therefore, the client needs to specify exactly what data is required and create mutations for any changes to be sent to the server.
+To be able to create these mutations, the difference between the old and the new version of the change needs to be recorded.
 Both, the specification of the required data as well as the creation of mutations is also done by this component.
 
 The third plugin, just called \lstinline|ui|, implements all the \gls{UI} elements.
@@ -156,13 +155,13 @@ The other controls are the new ones, with \lstinline|Developers| using a grid of
 Another significant amount of time was taken by working on the \lstinline|api-binding| plugin.
 As the back-end was not ready in time, the component was implemented to work with a simple mock-up of the back-end.
 Because of the fact, that the data from the \gls{API} is transformed into the data model generated with \gls{EMF}, 
-the GraphQL \gls{API} can not be used as intended.
+the \gls{graphql} \gls{API} can not be used as intended.
 Instead, all relevant data needs to be queried at once, every time the data is reloaded from the server.
 This problem was detected too late to change the overall architecture of the plugin, 
-mainly because the decision to switch to GraphQL for the Gropius \gls{API} was made after the concept for \gls{GropiusEI} was already done.
+mainly because the decision to switch to \gls{graphql} for the Gropius \gls{API} was made after the concept for \gls{GropiusEI} was already done.
 However, to achieve this, a pretty complex query needs to be sent to the server.
-Additionally, no appropriate java library could be found for using GraphQL \glspl{API} without manually generating the queries and manually parsing the responses. 
-In the end, some open-source ruby scripts \footnote{\url{https://github.com/Shopify/graphql_java_gen}} were used to generate helper classes from the Gropius GraphQL schema.
+Additionally, no appropriate java library could be found for using \gls{graphql} \glspl{API} without manually generating the queries and manually parsing the responses. 
+In the end, some open-source ruby scripts \footnote{\url{https://github.com/Shopify/graphql_java_gen}} were used to generate helper classes from the Gropius \gls{graphql} schema.
 The next problem was, that the mock-up of the back-end used to implement the \lstinline|api-binding| component is not sophisticated enough.
 The returned data is not consistent in itself, which prevents a correct transformation into the \gls{GropiusEI} data model.
 As the real back-end would not be ready in time, the decision was made to halt implementing the \lstinline|api-binding| plugin for now.
