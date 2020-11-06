@@ -2,24 +2,25 @@
 
 \chapter{Concept}
 \label{chap:ch3}
-The goal of this work is to evaluate the usefulness of an \gls{IDE} integration for the Gropius system \cite{speth2020gropius}.
+The objective of this work is to evaluate the usefulness of an \gls{IDE} extension for the \gls{Gropius} system \cite{speth2020gropius}.
 This chapter describes the approach taken in this thesis for archiving that goal.
-At the heart of the concept is the plan to develop a prototype issue management plugin for one \gls{IDE},
-which integrates into the Gropius system.
-This tool can then be used in the evaluation by presenting to experts in the field for a review.
+At the heart of the concept is a plan to develop an issue management extension for one \gls{IDE},
+which integrates into the  \gls{Gropius} framework.
+This tool is then used in the evaluation by presenting to experts in the field for a review.
 
 The first step was to gather requirements for that prototype. 
 This requirements engineering process as well as its results are described in \cref{sec:ch3:s1}.
-As visualizing details about an issue in the corresponding icon is a key part of multiple requirements,
-the next step was to determine which properties to visualize and how.
+Visualizing details about an issue in the corresponding icon is a key part of multiple requirements.
+Therefore, the next step was to determine which properties to visualize and how.
 The resulting concept for the icons is explained in \cref{sec:ch3:s2}.
 Finally, as described in \cref{sec:ch3:s3}, 
-a rough concept of the prototype tool was made before continuing with the design and implementation.
+a rough concept for the extension was made before continuing with the design and implementation.
 
 \section{Analysis and Requirements Engineering}
 \label{sec:ch3:s1}
-To gather requirements for the plugin prototype a process with six steps as shown in \cref{fig:requirmentsProcess} was used.
-This process can be split into two stages, each with the three activities of requirements elicitation, specification, and validation.
+The goal of requirements engineering is to gather, document, validate and manage requirements for a computer-based system \cite{sommerville1997requirements}. 
+To gather requirements for the extension, a process with six steps as shown in \cref{fig:requirmentsProcess} was used.
+This process is split into two stages, each with the three activities of requirements elicitation, specification, and validation.
 
 \begin{figure}[!h]
 	\centering
@@ -84,30 +85,30 @@ This process can be split into two stages, each with the three activities of req
 	\path [->,draw,thick] (box4) -- (box5title);
 	\path [->,draw,thick] (box5) -- (box6);
 	\end{tikzpicture}
-	\caption{Requirements Engineering process}
+	\caption{Requirements Engineering Process}
 	\label{fig:requirmentsProcess}
 \end{figure}
 
 As the first step of the first stage, a preliminary requirements elicitation was performed. 
 For this, internal brainstorming and discussion with the thesis' supervisors were used.
-Next, the resulting requirements were incorporated into the paper for the thesis proposal, 
+Next, the resulting requirements were incorporated into the proposal for this thesis, 
 which serves as the first requirements specification.
 After this, the primary requirements validation was performed. 
 The positive feedback for that proposal paper was one of the signs that the requirements are valid.
 Additionally, the discussion and feedback after the thesis proposal presentation was also used to validate the requirements.
 
-Then the second stage of requirements elicitation was performed using the requirements from the first elicitation, 
+Then, the second stage of requirements elicitation was performed using the requirements from the first elicitation, 
 the results from the validation as well as the results of a stakeholder interview.
 For this interview, the general concept of Gropius as well as of this thesis was sent to representatives of each group of stakeholders. 
 They were then asked for their requirements with the help of two questions.
 The first question asked for features expected from an issue management plugin in general,
-the second for those, which the representatives would expect from such a plugin, which integrates into Gropius.
+the second for those, which the representatives would expect from such a plugin, which integrates into \gls{Gropius}.
 
-As the prototype is a new tool for an unfinished system, only three groups of stakeholders could be identified:
-First, the potential users, in this case developers, working with multi-component systems.
+Since the prototype is a new tool for a system under development, only three groups of stakeholders could be identified:
+First, the potential users, in this case developers, working with component-based systems, such as microservices.
 Various members of the department for software quality and architecture were contacted as representatives of this group.
 Second, the thesis' supervisors to ensure the scientific scope of the work. 
-Third, Sandro Speth as the author of the Gropius system \cite{speth2020gropius}.
+Third, Sandro Speth, who is also one of the supervisors, as the author of the \gls{Gropius} system \cite{speth2020gropius}.
 
 Next, the gathered requirements were formally specified as user stories in the requirements document.
 Finally, this document was validated by a review from the thesis' supervisors.
@@ -115,40 +116,40 @@ Finally, this document was validated by a review from the thesis' supervisors.
 
 \subsection*{Gathered Requirements}
 The result of this requirements engineering process is a list of functional requirements in the form of user stories.
-These requirements are listed below, split into those expected from any issue management plugin and those expected from a plugin integrated into Gropius.
+These requirements are listed below, split into those expected from any issue management plugin and those expected from a plugin integrated into \gls{Gropius}.
 
 \newcounter{enumarteCounter} % For saving the counter between the two enumerates
 
 First, the requirements expected from any issue management plugin:
 \begin{enumerate}
-	\item As a developer I want to have a list of all open issues. \label{itm:ch3:req:filter_open}
-	\item As a developer I want to have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
-	\item As a developer I want to have a searchable list of issues. \label{itm:ch3:req:filter_search}
-	\item As a developer I want to have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
-	\item As a developer I want to have a list of issues which can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
-	\item As a developer I want to have a list of issues which can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
-	\item As a developer I want to quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
-	\item As a developer I want to be able to see all details for a specific issue.
-	\item As a developer I want to be able to jump to a related issue from my currently viewed issue.
-	\item As a developer I want to be able to quickly open a relevant source file at the relevant line for an issue, even if it is in another eclipse project (as long as that project is in my workspace).
-	\item As a developer I want to be shown which lines of a source file are relevant for an issue. (For example through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
-	\item As a developer I want to be able to edit every property of an issue that I have write access to.
-	\item As a developer I want to be able to create a new issue.
-	\item As a developer I want to be able to create a new issue for some lines of code without manually entering the source file and lines in a dialog.
+	\item As a developer, I want to have a list of all open issues. \label{itm:ch3:req:filter_open}
+	\item As a developer, I want to have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
+	\item As a developer, I want to have a searchable list of issues. \label{itm:ch3:req:filter_search}
+	\item As a developer, I want to have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
+	\item As a developer, I want to have a list of issues which can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
+	\item As a developer, I want to have a list of issues which can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
+	\item As a developer, I want to quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
+	\item As a developer, I want to be able to see all details for a specific issue.
+	\item As a developer, I want to be able to jump to a related issue from my currently viewed issue.
+	\item As a developer, I want to be able to quickly open a relevant source file at the relevant line for an issue, even if it is in another eclipse project (as long as that project is in my workspace).
+	\item As a developer, I want to be shown which lines of a source file are relevant for an issue. (For example through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
+	\item As a developer, I want to be able to edit every property of an issue that I have write access to.
+	\item As a developer, I want to be able to create a new issue.
+	\item As a developer, I want to be able to create a new issue for some lines of code without manually entering the source file and lines in a dialog.
 	\setcounter{enumarteCounter}{\value{enumi}} % store counter to continue later
 \end{enumerate}
 
-These are the requirements expected from such a plugin integrated into Gropius:
+These are the requirements expected from such a plugin integrated into \gls{Gropius}:
 \begin{enumerate}
 	\setcounter{enumi}{\value{enumarteCounter}} % restore counter from above
-	\item As a developer I want the system architecture graph in my web browser to focus on the component I've selected in eclipse.
-	\item As a developer I want the system architecture graph in my web browser to highlight the issue I've selected in eclipse.
-	\item As a developer I want to be able to open details about an issue in the eclipse view through the architecture graph in my web browser.
-	\item As a developer I want to be able to open a relevant source code line of an issue in eclipse from the architecture graph in my web browser.
-	\item As a developer I want to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example in meetings.
+	\item As a developer, I want the system architecture graph in my web browser to focus on the component I've selected in eclipse.
+	\item As a developer, I want the system architecture graph in my web browser to highlight the issue I've selected in eclipse.
+	\item As a developer, I want to be able to open details about an issue in the eclipse view through the architecture graph in my web browser.
+	\item As a developer, I want to be able to open a relevant source code line of an issue in eclipse from the architecture graph in my web browser.
+	\item As a developer, I want to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example in meetings.
 \end{enumerate}
 
-\section{Issue Icons}
+\section{Concept for the Issue Icons}
 \label{sec:ch3:s2}
 For requirements \ref{itm:ch3:req:list_issue_type} and \ref{itm:ch3:req:source_file_marker}, it is useful to have icons for each issue.
 Especially for requirement \ref{itm:ch3:req:list_issue_type} the icons can not all be the same but need to carry some information.
@@ -156,20 +157,20 @@ Therefore, a concept was made about which properties should be visualized in the
 
 As it was not clear how much information could be visualized in one small icon, 
 the properties that should be visualized were ordered by their priority.
-That way it was easier to make decisions about what information to include in the item and how prominent to visualize it later during the creation of these icons.
+That way it was easier to make decisions about what information to include in the icon and how prominent to visualize it later during the creation of these icons.
 The following properties were chosen to be visualized with decreasing priority.
 \begin{itemize}
 	\item Type of Issue
 	\subitem Enhancement vs. Bug
-	\item Does this issue cause problems in other projects?
-	\item Is this issue just a symptom of another issue elsewhere?
+	\item Does this issue cause problems in other projects/components?
+	\item Is this issue just a symptom of another issue elsewhere or is this the root cause?
 	\item Is the issue assigned to the viewing developer?
 	\item Is the issue new or work in progress or done?
 \end{itemize}
 Finally, another aspect, that could be visualized is the visibility of the issue as some \glspl{IMS} can have issues that are only visible internally.
-But it was decided against it for now, as it didn't seem that important of a property and the Gropius system currently doesn't support it anyway.
+However, it was decided against it for now, as it didn't seem that important of a property and the Gropius system currently doesn't support it anyway.
 
-\section{Prototype Plugin}
+\section{Concept for the Prototype Plugin}
 \label{sec:ch3:s3}
 Before starting with the detailed design and implementation of the prototype tool, a rough concept for it needed to be created.
 Most parts of this were already done during the thesis' proposal process and a version of this concept was included in the proposal paper.
@@ -177,12 +178,12 @@ Therefore, the feedback for the paper and the presentation in front of the depar
 
 According to the concept, the plugin consists of two main \gls{UI} elements: The issue list and the issue details element.
 These are complemented by various dialogs and other features described below.
-The plugin uses the \gls{API} of the Gropius system \cite{speth2020gropius} to retrieve its data and perform any modifications on it.
+The plugin uses the \gls{API} of the \gls{Gropius} system to retrieve the required data and perform any modifications on it.
 Furthermore, the plugin is split into multiple components, 
 of which only one is specific to the supported \gls{IDE} 
 and the others are reusable for other \glspl{IDE} with minimal changes.
 That way the amount of work to port it for another \gls{IDE} is minimized,
-as long as it supports java-based plugins.
+as long as it supports \gls{java}-based plugins.
 
 \begin{figure}[!h]
 	\centering
@@ -216,8 +217,8 @@ In both cases, additional dialogs are used to allow editing of the more complex 
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.75\textwidth]{graphics/concept_mockup_issueMarker.png}
-	\caption{Mock-up for Issue Markers}
+	\includegraphics[width=0.75\textwidth]{graphics/concept_mockup_issueMarker_arrow.png}
+	\caption{Mock-up of Issue in the Marker Column}
 	\label{fig:c3:mockup_issueMarkers}
 \end{figure}
 Moreover, the issues are displayed as markers in the \gls{IDE}'s editor, whenever a file with issues is open in the editor.
