@@ -2,10 +2,63 @@
 
 \chapter{Introduction}
 \label{chap:ch1}
+New software today is often based on architectures with many independently developed but interacting components.
+One popular example is the so-called microservice architecture.
+Such software consists of many small independent services, all fulfilling a small portion of the complete task.
+Often these services are implemented in many independent software projects by multiple teams.
+As with any software development process it is advisable to have some kind of issue management solution 
+as well as a way to document any major design decisions.
+Furthermore, documenting the interfaces between the services may even be more important 
+than documenting the interfaces between components of a typical application.
+
+However, as the documentation and issues are spread over multiple projects
+and each may affect more than one project there are several challenges to managing these documents and issues effectively.
+For example changes to documentation may not be propagated to all teams. 
+Another example is, that issues found by one team may have the same root cause as issues found by another team, 
+however, the root cause may even be caused by a piece of code of a third team.
+
+One possible approach to deal with this problem is introduced in \cite{Speth2019}.
+The proposed solution are so-called multi-project coding issues. 
+These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. 
+Additionally, traceability links between multiple issues and artifacts are proposed.
+As a concrete syntax a graphical notation for these issues and links is introduced and implemented in a prototype framework. 
+The frontend of this framework is a web-based application with an architecture graph at its core.
+This graph is used to view and edit the system architecture and issues displayed with the introduced notation. 
+The system is a supportive tool for software architects and project managers to keep an overview over the services
+and dependencies between those and as well as the current issues and their influence on all components.
+
+Even though this tool can be used by developers, it is rarely necessary for a developer to look at the whole system. 
+It is more important that developers understand what parts of the system depend on the piece of source code they are working on and which other components may influence the behavior of it. 
+Similarly, when working on an issue a developer does not need to look at all issues of the complete system, but only at those, which may be a cause or an effect of the one being worked on. 
+Finally, it should be as easy as possible for developers to create a new issue, think about and discuss how it may relate to other issues, and write down their findings.
+A web-app,  which needs to be opened, the correct service selected, and the relevant file searched are all obstacles, which may impede a developer during this process. 
+
+The objective of this thesis is to develop, implement, and evaluate a concept for integrating this approach into the developer's \gls{IDE}.
+This way the workflow of a developer is disrupted as little as possible and most of these obstacles are removed.
+Developers can be shown all issues attached to a file or service as well as issues in components depending on it.
+Furthermore, they can create issues for the code they are currently looking at and can be aided in referencing any other relevant issues. 
+
+First, a concept for such an \gls{IDE} extension is developed based on the results of a requirements engineering process.
+Based on this concept an \gls{Eclipse} plugin is designed and implemented.
+The resulting \gls{IDE} extension is then subjected to a review by industry experts.
+Through that, valuable feedback is gained and the experts are introduced to the concept.
+Finally, an expert survey is conducted to evaluate if the concept is useful 
+as well as in what way and by how much the extension can help developers in the field cope with the challenges when working with issues.
+
+The developed concept and extension are appreciated by most experts.
+Many state that it solves problems they are actually facing when working with issues in the mentioned environment.
+Most give valuable feedback on how to improve the plugin.
+Some even say, they would use the result once a few more features are added.
+
+The main contributions of this thesis are the concept for integrating the issue management approach introduced by \cite{Speth2019} into an \gls{IDE},
+the implemented version of it in the form of an \gls{Eclipse} extension, and the evaluation of both through the expert review and survey.
 
 \section*{Thesis Structure}
-%Die Arbeit ist in folgender Weise gegliedert:
-%\begin{description}
-%\item[Kapitel~\ref{chap:ch2} -- \nameref{chap:ch2}:] Hier werden werden die Grundlagen dieser Arbeit beschrieben.
-%\item[Kapitel~\ref{chap:conclusion} -- \nameref{chap:conclusion}] fasst die Ergebnisse der Arbeit zusammen und stellt Anknüpfungspunkte vor.
-%\end{description}
+The thesis is structured as follows:
+\begin{description}
+	\item[Chapter~\ref{chap:ch2} -- \nameref{chap:ch2}:] In this chapter, the thesis' foundations of and related work are presented.
+	\item[Chapter~\ref{chap:ch3} -- \nameref{chap:ch3}:] This chapter introduces the developed concept.
+	\item[Chapter~\ref{chap:ch4} -- \nameref{chap:ch4}:] Here the design and implementation of the \gls{IDE} extension is described.
+	\item[Chapter~\ref{chap:ch5} -- \nameref{chap:ch5}:] The evaluation including the expert review and survey is described and discussed.
+	\item[Chapter~\ref{chap:ch6} -- \nameref{chap:ch6}:] In this chapter, the final conclusion of the thesis is presented.
+\end{description}
