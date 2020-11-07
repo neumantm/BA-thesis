@@ -105,7 +105,7 @@ The first question asked for features expected from an issue management plugin i
 the second for those, which the representatives would expect from such a plugin, which integrates into \gls{Gropius}.
 
 Since the prototype is a new tool for a system under development, only three groups of stakeholders could be identified:
-First, the potential users, in this case developers, working with component-based systems, such as microservices.
+First, the potential users, in this case, developers, working with component-based systems, such as microservices.
 Various members of the department for software quality and architecture were contacted as representatives of this group.
 Second, the thesis' supervisors to ensure the scientific scope of the work. 
 Third, Sandro Speth, who is also one of the supervisors, as the author of the \gls{Gropius} system \cite{speth2020gropius}.
@@ -126,8 +126,8 @@ First, the requirements expected from any issue management plugin:
 	\item As a developer, I want to have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
 	\item As a developer, I want to have a searchable list of issues. \label{itm:ch3:req:filter_search}
 	\item As a developer, I want to have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
-	\item As a developer, I want to have a list of issues which can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
-	\item As a developer, I want to have a list of issues which can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
+	\item As a developer, I want to have a list of issues that can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
+	\item As a developer, I want to have a list of issues that can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
 	\item As a developer, I want to quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
 	\item As a developer, I want to be able to see all details for a specific issue.
 	\item As a developer, I want to be able to jump to a related issue from my currently viewed issue.
@@ -161,14 +161,14 @@ The type of issue can be used to roughly specify which of these concepts is repr
 Common values are bug and enhancement.
 
 Another interesting concept, that could be visualized in the icons, is the idea that one issue can be the cause of another.
-For example a Null-Pointer in one component could cause an illegal response in an \gls{API}, which could cause a crash in another component.
+For example, a Null-Pointer in one component could cause an illegal response in an \gls{API}, which could cause a crash in another component.
 Then the Null-Pointer is the root cause.
 The illegal response is a symptom of that but also the cause of the crash.
 The crash is just a symptom of the illegal response and can probably not be completely fixed without fixing the other two.
 
 Other interesting properties include, to whom the issue is assigned and the state of the issue.
-It could be interesting to immediately recognize issues assigned to yourself.
-With the state of the issue a developer can directly see if the issue still exists and if work is required.
+It could be interesting to immediately recognize the issues assigned to yourself.
+With the state of the issue, a developer can directly see if the issue still exists and if work is required.
 
 As it was not clear how much information could be visualized in one small icon, 
 the properties that should be visualized were ordered by their priority.

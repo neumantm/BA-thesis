@@ -19,12 +19,12 @@ To support this decision the popularity, the support for creating plugins, and m
 
 To determine the popularity, a current online ranking \footnote{\url{https://pypl.github.io/IDE.html}}, which is based on Google statistics was consulted.
 According to it, at the time of writing Visual Studio was the most popular with a 25\% share.
-Second best was \gls{Eclipse} with 16\% followed by Android Studio and Visual Studio Code (completely separate from Visual Studio) with 11\% and 9\%.
+The second best was \gls{Eclipse} with 16\% followed by Android Studio and Visual Studio Code (completely separate from Visual Studio) with 11\% and 9\%.
 The last two considered were pyCharm on rank 5 with 8\% and IntelliJ IDEA on rank 6 with 6\%.
 We decided against Android Studio and pyCharm, as they only support the development of Android Apps and Python programs respectively.
 All the other \glspl{IDE} support multiple languages allowing the extension to be used in a more diverse set of scenarios.
 
-Of the remaining four candidates the ability and complexity of creating extensions was researched.
+Of the remaining four candidates the ability and complexity of creating extensions were researched.
 The \gls{IDE} with the easiest process to create plugins is Visual Studio Code \footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}.
 The second best is \gls{Eclipse} also having a lot of material helping with creating plugins for it, such as \cite{clayberg2006eclipse}.
 Plugins are a core concept of both and are used to provide almost all features available in these \glspl{IDE}.
@@ -32,7 +32,7 @@ Next, IntelliJ IDEA also has a fairly simple process for creating plugins \footc
 Finally, Visual Studio also supports creating plugins, but the process is more complex than with the previous three \footnote{\url{https://docs.microsoft.com/en-us/visualstudio/extensibility/starting-to-develop-visual-studio-extensions?view=vs-2019}}.
 Additionally, Visual Studio Extensions can only be developed on Windows.
 
-\Gls{Eclipse} scored second in both of the above criteria and the winners of both categories is worse in the other.
+\Gls{Eclipse} scored second in both of the above criteria and the winners of both categories are worse in the other.
 Additionally, I already had experience with developing plugins for it.
 Therefore, the \gls{Eclipse} \gls{IDE} was chosen as the one, for which the extension will be implemented.
 
@@ -58,9 +58,9 @@ This greatly reduces the possible detail in the parts.
 \end{figure}
 \Cref{fig:c4:icon_parts} shows all the parts described above.
 The first row contains the bugs from open to done, the second the enhancements, and the third the annotations for the other three properties.
-The left-most annotation is included in the icon, when the issue causes problems in another project.
+The left-most annotation is included in the icon when the issue causes problems in another project.
 In the finished icon, it is located in the top right corner.
-The second symbol in the last row, is the annotation for when the issue is just a symptom of an issue from another project.
+The second symbol in the last row is the annotation for when the issue is just a symptom of an issue from another project.
 On the final icons, this is shown in the top left.
 The third symbol represents the fact, that the issue is assigned to the current developer and is added to the bottom left of the final icon.
 
@@ -93,7 +93,7 @@ large parts of these two \gls{UI} elements can be automatically generated that w
 \end{figure}
 
 The plugin on the top left of \cref{fig:c4:component_diagram}, called \lstinline|data| contains the data model for the plugin. 
-It is first modeled as an \gls{UML} model, then converted to an \gls{EMF} ecore model and then the model code is generated based on that.
+It is first modeled as an \gls{UML} model, then converted to an \gls{EMF} ecore model, and then the model code is generated based on that.
 Ecore is the metamodel to represent models in the \gls{EMF} world \cite{steinberg2008emf}.
 
 The plugin \lstinline|api-binding| is responsible for all communication with the \gls{Gropius} back-end through the \gls{Gropius} \gls{API}.
@@ -194,7 +194,7 @@ Everything, that was implemented is presented in the next few paragraphs.
 \end{figure}
 As stated in \cref{sec:ch3:s3} the main elements of \gls{GropiusEI} are the issue list and the issue detail view.
 Deviating from the concept, those two elements are implemented in one big view element, as can be seen in \cref{fig:c4:screenshot_issue_list}.
-This is the case because \gls{Parsley} provides such a view and implementing interactions between the two  parts is easier that way.
+This is the case because \gls{Parsley} provides such a view and implementing interactions between the two parts is easier that way.
 
 \begin{figure}[!h]
 	\centering
