@@ -17,11 +17,24 @@ However, the extension can only be implemented for one \gls{IDE} during the cour
 Therefore, a decision had to be made, which \gls{IDE} to choose.
 To support this decision the popularity, the support for creating plugins, and my prior experience were considered.
 
-Based on these aspects the \gls{Eclipse} \gls{IDE} was chosen.
-It is one of the more popular \glspl{IDE} for \gls{java} \cite{geer2005eclipse}, 
-which is one of the more widespread programming languages \cite{delorey2007programming}.
-Additionally, Eclipse has extensive support for creating plugins \cite{clayberg2006eclipse}.
-Finally, I already had experiences with developing \gls{Eclipse} plugins.
+To determine the popularity, a current online ranking \footnote{\url{https://pypl.github.io/IDE.html}}, which is based on Google statistics was consulted.
+According to it, at the time of writing Visual Studio was the most popular with a 25\% share.
+Second best was \gls{Eclipse} with 16\% followed by Android Studio and Visual Studio Code (completely separate from Visual Studio) with 11\% and 9\%.
+The last two considered were pyCharm on rank 5 with 8\% and IntelliJ IDEA on rank 6 with 6\%.
+We decided against Android Studio and pyCharm, as they only support the development of Android Apps and Python programs respectively.
+All the other \glspl{IDE} support multiple languages allowing the extension to be used in a more diverse set of scenarios.
+
+Of the remaining four candidates the ability and complexity of creating extensions was researched.
+The \gls{IDE} with the easiest process to create plugins is Visual Studio Code \footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}.
+The second best is \gls{Eclipse} also having a lot of material helping with creating plugins for it, such as \cite{clayberg2006eclipse}.
+Plugins are a core concept of both and are used to provide almost all features available in these \glspl{IDE}.
+Next, IntelliJ IDEA also has a fairly simple process for creating plugins \footcite{\url{https://jetbrains.org/intellij/sdk/docs/basics/getting_started.html}}.
+Finally, Visual Studio also supports creating plugins, but the process is more complex than with the previous three \footnote{\url{https://docs.microsoft.com/en-us/visualstudio/extensibility/starting-to-develop-visual-studio-extensions?view=vs-2019}}.
+Additionally, Visual Studio Extensions can only be developed on Windows.
+
+\Gls{Eclipse} scored second in both of the above criteria and the winners of both categories is worse in the other.
+Additionally, I already had experience with developing plugins for it.
+Therefore, the \gls{Eclipse} \gls{IDE} was chosen as the one, for which the extension will be implemented.
 
 As the prototype plugin integrates the \gls{Eclipse} system into the \gls{Eclipse} \gls{IDE}, it has been named \gls{GropiusEI}.
 

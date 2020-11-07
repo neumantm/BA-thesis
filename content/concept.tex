@@ -155,6 +155,21 @@ For requirements \ref{itm:ch3:req:list_issue_type} and \ref{itm:ch3:req:source_f
 Especially for requirement \ref{itm:ch3:req:list_issue_type} the icons can not all be the same but need to carry some information.
 Therefore, a concept was made about which properties should be visualized in these icons.
 
+One possible property is the type of issue.
+As described in \cref{ssec:ch2:ss1.1} an issue can represent various concepts.
+The type of issue can be used to roughly specify which of these concepts is represented by an issue.
+Common values are bug and enhancement.
+
+Another interesting concept, that could be visualized in the icons, is the idea that one issue can be the cause of another.
+For example a Null-Pointer in one component could cause an illegal response in an \gls{API}, which could cause a crash in another component.
+Then the Null-Pointer is the root cause.
+The illegal response is a symptom of that but also the cause of the crash.
+The crash is just a symptom of the illegal response and can probably not be completely fixed without fixing the other two.
+
+Other interesting properties include, to whom the issue is assigned and the state of the issue.
+It could be interesting to immediately recognize issues assigned to yourself.
+With the state of the issue a developer can directly see if the issue still exists and if work is required.
+
 As it was not clear how much information could be visualized in one small icon, 
 the properties that should be visualized were ordered by their priority.
 That way it was easier to make decisions about what information to include in the icon and how prominent to visualize it later during the creation of these icons.
