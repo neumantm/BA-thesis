@@ -96,18 +96,18 @@ The points for question \ref{itm:ch5:expert_questions_are_these_problems} were c
 
 \subsection{Results}
 \label{ssec:ch5:ss2.2}
-Of the 12 experts, who agreed to participate, 7 actually took part in the review and survey.
+Of the twelve experts, who agreed to participate, eight actually took part in the review and survey,
+however only seven could sent me their answers in time.
 All of these experts are software developers.
 One works in academia and the others in the industry.
 The industry experts work in various different companies from small businesses with just a few employees to well known global corporations,
 from IT consultancies to companies, where software is just a small part of the final product.
-Furthermore, the experts have very different amounts of experience.
-One is working as an intern during his masters' studies, others have been developers for a few years and some are senior software engineers, who have been working in the industry for tens of years.
+Furthermore, the experts have very different levels of experience.
+One is working as an intern during his masters' studies, others have been developers for a few years and some are senior software engineers, who have been working in the industry for decades.
 
 In general most experts appreciate the concept.
 They also see potential in the extension, but would like a few more features.
-In the following paragraphs, first the general and technical feedback for the extension is summarized.
-Then the results of the expert survey are presented.
+In the following paragraphs, the general and technical feedback for the extension is summarized followed by the results of the expert survey.
 
 While reviewing the implemented extension many experts missed features that were planned but could not be implemented because of the time.
 Two experts also noticed some minor bugs with the issue list, like it freezing under some circumstances when changing the displayed columns.
@@ -118,6 +118,9 @@ Furthermore, the ability to group issues in the issue list by various properties
 One expert also requested the ability to specify the kind of a relation between to issues.
 Moreover, another expert would like some kind of key for the icons and would prefer if the state of the issue was only visualized by one aspect, preferably the color and not the small black overlay. He also stated that an arrow pointing up may be easier to identify as an enhancement than the light bulb.
 One expert would like the ability to link issues to other kinds of software development artifacts like \gls{PDF} documents.
+He also stated, that \gls{GropiusEI} is missing any kind of anonymization, which is typically required for cross-company collaboration.
+Additionally, he would expect drag-and-drop capabilities.
+Moreover, he would prefer if the interface for adding assignees and labels would be more similar to the one of existing \glspl{IMS} like Github.
 Another expert suggested also showing the markers in the \gls{Eclipse} problems view and as annotations on the files, folders, and projects in the \gls{Eclipse} package explorer.
 Furthermore, he would like the issue list and issue details \gls{UI} element to be separate views, so they can be moved within the \gls{Eclipse} window easier.
 He would also prefer the default filter for the issue list to only show open issues.
@@ -131,7 +134,7 @@ He also liked, that there are not to many types of issues.
 
 The experts' answers to question \ref{itm:ch5:expert_questions_problems} were rather diverse.
 One expert doesn't see any problems with existing tools when it comes to working with issues affecting multiple independent projects.
-The next expert stated, that the most significant problem is tracking issues across multiple projects, that depend on each other.
+The next expert stated, that the most significant problem is tracking issues, that depend on each other, across multiple projects.
 In the mind of another expert, the proper description of the issues and a good specification of the issue location are the core problems.
 Similar to that, the fourth expert thinks that the lack of support for specifying the issue location other than as part of the description or a comment is a major problem.
 He also stated that he often misses the ability to specify the kind of a relation between two issues or the different types of relations are to restricted.
@@ -143,7 +146,7 @@ Another expert stated, the biggest problem for him is managing dependencies, whe
 
 Three experts completely agree with \hyperref[itm:ch5:expert_questions_are_these_problems_1]{first point} of question \ref{itm:ch5:expert_questions_are_these_problems}.
 Two experts think it would be a nice feature, but don't see the lack of it as a problem.
-The expert, who doesn't see any problem with existing \gls{IMS} when working with issues affecting multiple independent projects, states that the problem is seeing this link to a line in his \gls{IDE}.
+The expert, who doesn't see any problem with existing \gls{IMS} when working with issues affecting multiple independent projects, states that the real problem is visualizing this link in his \gls{IDE}.
 One expert stated, that existing \gls{IMS} mostly support this well enough for his needs.
 He and one of the experts only considering this a nice feature also stated, that for most issues a concrete location can not be determined, reducing the need for this feature.
 
@@ -185,6 +188,41 @@ In his eyes, both of these points are solved by \gls{GropiusEI}.
 
 \section{Discussion}
 \label{sec:ch5:s3}
+In this section the validity of the concept and the success of this thesis is discussed based on the \gls{GQM} plan introduced in \cref{sec:ch5:s1} and the results of the expert survey presented in \cref{ssec:ch5:ss2.2}.
+For that, three hypotheses based on the research questions \textbf{Q1} to \textbf{Q3} presented in \cref{sec:ch5:s1} are established. 
+Then their validity is discussed based on the results of the expert review.
+Finally, if none of the hypotheses is rejected, the goal \textbf{G1} has been reached.
+
+The following three hypotheses, one for each research question, were created:
+\begin{itemize}
+	\item[\textbf{H1}] Developers do face problems when working with issues affecting multiple independent projects during the software development/engineering process.
+	\item[\textbf{H2}] These problems are solved by this thesis' tool at least to some degree.
+	\item[\textbf{H3}] The industry can imagine using such a tool in production.
+\end{itemize}
+
+As shown by their answers to \ref{itm:ch5:expert_questions_problems} the experts found various problems, which occur when working with issues affecting multiple independent projects.
+Additionally, almost half of the experts see the first point of question \ref{itm:ch5:expert_questions_are_these_problems} as a problem and two more think it would be a nice feature.
+Another does not exactly have that problem, but a related one.
+Furthermore, the other two points provided for question \ref{itm:ch5:expert_questions_are_these_problems}  are seen as important features by expert, even though most think their support of existing \glspl{IMS} is good enough.
+However, these points are also seen as problems by three and two experts respectively.
+In total it can be said, that there are at least some problems for developers when working with such issues.
+Therefore, \emph{hypothesis \textbf{H1} is accepted}.
+
+According to most experts \gls{GropiusEI} solves at least some of these problems.
+Additionally, all but one expert think it at least reduces these problems.
+Furthermore, this one expert stated, that \gls{GropiusEI} solves other problems he has with existing \gls{IMS}.
+Therefore, it can be said it also improves the efficiency, effectiveness or convenience for him when working with issues,
+even though the problems are not specific to issues affecting independent projects.
+Consequently, all experts think there is some benefit of using \gls{GropiusEI}.
+Even though not all of the problems are solved equally well it can be said, the problems all together are solved to a significant degree.
+Therefore, \emph{hypothesis \textbf{H2} is accepted}, too.
+
+Finally, all but one expert could see themselves using \gls{GropiusEI} in their daily business once the implementation of it has advanced enough.
+This clearly indicates, that the industry can imagine using it in production.
+Therefore, \emph{hypothesis \textbf{H3} is accepted}, too.
+
+All three hypotheses have been accepted. Therefore it can be said, that the goal of this thesis, as defined by \textbf{G1} in \cref{sec:ch5:s1} has been reached.
+
 \section{Threats to Validity}
 \label{sec:ch5:s4}
 
