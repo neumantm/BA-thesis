@@ -82,9 +82,9 @@ After an expert completed the review he was sent the following questions and ask
 \begin{enumerate}
 	\item What do you see as the most significant problems when working with issues affecting multiple independent projects during your software development/engineering process? \label{itm:ch5:expert_questions_problems}
 	\item Do you think the following points represent problems or challenges of existing issue management systems you face as a developer? \label{itm:ch5:expert_questions_are_these_problems}
-	\subitem The lack of insufficient support of linking issues to multiple specific software development artifacts accurate to the line, especially if the artifacts are part of multiple independent projects.
-	\subitem The lack of insufficient support of linking issues to each other
-	\subitem The lack of inadequate support of navigating from one to the next issue through the chain of related or dependent issues.
+	\subitem The lack of insufficient support of linking issues to multiple specific software development artifacts accurate to the line, especially if the artifacts are part of multiple independent projects.\label{itm:ch5:expert_questions_are_these_problems_1}
+	\subitem The lack of insufficient support of linking issues to each other \label{itm:ch5:expert_questions_are_these_problems_2}
+	\subitem The lack of inadequate support of navigating from one to the next issue through the chain of related or dependent issues. \label{itm:ch5:expert_questions_are_these_problems_3}
 	\item For which of these problems (from points 1 and 2) would you say Gropius EI completely solves them? \label{itm:ch5:expert_questions_solve}
 	\item For which of these problems (from points 1 and 2) would you say Gropius EI reduces them? \label{itm:ch5:expert_questions_reduce}
 	\subitem How far would you say are each of these problems reduced?
@@ -96,7 +96,93 @@ The points for question \ref{itm:ch5:expert_questions_are_these_problems} were c
 
 \subsection{Results}
 \label{ssec:ch5:ss2.2}
-%Of the 12 experts, who agreed to participate, a total of $x$ reviewed the tool and $y$ answered the prepared questions in the end. \todo{Insert correct numbers}
+Of the 12 experts, who agreed to participate, 7 actually took part in the review and survey.
+All of these experts are software developers.
+One works in academia and the others in the industry.
+The industry experts work in various different companies from small businesses with just a few employees to well known global corporations,
+from IT consultancies to companies, where software is just a small part of the final product.
+Furthermore, the experts have very different amounts of experience.
+One is working as an intern during his masters' studies, others have been developers for a few years and some are senior software engineers, who have been working in the industry for tens of years.
+
+In general most experts appreciate the concept.
+They also see potential in the extension, but would like a few more features.
+In the following paragraphs, first the general and technical feedback for the extension is summarized.
+Then the results of the expert survey are presented.
+
+While reviewing the implemented extension many experts missed features that were planned but could not be implemented because of the time.
+Two experts also noticed some minor bugs with the issue list, like it freezing under some circumstances when changing the displayed columns.
+The most requested feature was the ability to filter the issue list by more criteria, especially the ability to search by text contained in the title or description.
+Another feature, that was requested multiple times was the ability to create locations and issues from the source code editor.
+Additionally, multiple experts stated, they would like to be able to navigate from a marker in the code to the corresponding issue in the issue list.
+Furthermore, the ability to group issues in the issue list by various properties was requested by some experts.
+One expert also requested the ability to specify the kind of a relation between to issues.
+Moreover, another expert would like some kind of key for the icons and would prefer if the state of the issue was only visualized by one aspect, preferably the color and not the small black overlay. He also stated that an arrow pointing up may be easier to identify as an enhancement than the light bulb.
+One expert would like the ability to link issues to other kinds of software development artifacts like \gls{PDF} documents.
+Another expert suggested also showing the markers in the \gls{Eclipse} problems view and as annotations on the files, folders, and projects in the \gls{Eclipse} package explorer.
+Furthermore, he would like the issue list and issue details \gls{UI} element to be separate views, so they can be moved within the \gls{Eclipse} window easier.
+He would also prefer the default filter for the issue list to only show open issues.
+Moreover, two expert stated, that they would like to be able to sort the list of labels for each issue in the issue list, such that, for example, the work-in-progress label is always the first one displayed.
+Finally, one expert thinks that the issue locations would rarely be used in practice as it is to much extra work and most developers dislike managing such additional data.
+
+The existing features the experts liked the most were the ability to quickly navigate between issues and to the code as well as the markers in the editor.
+One also stated he likes the way the existing save button of \gls{Eclipse} is used to save the data of the issue list.
+Another especially liked the icons, because they allow to quickly get an overview over the issues and some of their properties without being overloaded.
+He also liked, that there are not to many types of issues.
+
+The experts' answers to question \ref{itm:ch5:expert_questions_problems} were rather diverse.
+One expert doesn't see any problems with existing tools when it comes to working with issues affecting multiple independent projects.
+The next expert stated, that the most significant problem is tracking issues across multiple projects, that depend on each other.
+In the mind of another expert, the proper description of the issues and a good specification of the issue location are the core problems.
+Similar to that, the fourth expert thinks that the lack of support for specifying the issue location other than as part of the description or a comment is a major problem.
+He also stated that he often misses the ability to specify the kind of a relation between two issues or the different types of relations are to restricted.
+On the other hand, he thinks that most \glspl{IMS} have to many different types of issues, which causes confusion and allows to much room for interpretation.
+Another expert stated, that the most significant problem is, that some, especially closed-source, projects don't have a public \gls{IMS} and some open-source projects are managing their projects in a custom \gls{IMS} instead of a well known one like the Github issue tracker.
+One expert also sees the problem, that developers need to keep the overview over the components, to know in which \gls{IMS} they need to create or search an issue.
+He also thinks, that it is a problem, when one issue affects multiple components from the customers perspective.
+Another expert stated, the biggest problem for him is managing dependencies, when a fix for an issue might break compatibility and therefore the new version of multiple components need to be deployed simultaneously. 
+
+Three experts completely agree with \hyperref[itm:ch5:expert_questions_are_these_problems_1]{first point} of question \ref{itm:ch5:expert_questions_are_these_problems}.
+Two experts think it would be a nice feature, but don't see the lack of it as a problem.
+The expert, who doesn't see any problem with existing \gls{IMS} when working with issues affecting multiple independent projects, states that the problem is seeing this link to a line in his \gls{IDE}.
+One expert stated, that existing \gls{IMS} mostly support this well enough for his needs.
+He and one of the experts only considering this a nice feature also stated, that for most issues a concrete location can not be determined, reducing the need for this feature.
+
+Four experts stated, that the feature mentioned in the \hyperref[itm:ch5:expert_questions_are_these_problems_2]{second point} is very important,
+but that most \glspl{IMS} have adequate support of it.
+Two expert agrees, that this is a problem with existing \glspl{IMS}.
+One of them also stated, it should be as easy as possible to create such a link.
+Another expert states, that sometimes the support of this feature is inadequate, especially when working with independent projects.
+
+Similar to the previous point, all experts agree that \hyperref[itm:ch5:expert_questions_are_these_problems_3]{third feature} is important, 
+but four of them think the support of it is good enough in existing \gls{IMS}.
+One thinks that very few \glspl{IMS} have adequate support for this.
+Two experts also stated, a graphical overview over the linked issues would be nice.
+The expert, who wants the ability to specify the kind of relation also mentioned, that only having one type of relation is bad for the navigability between issues as it makes the list of related issues long and confusing.
+One expert also states navigating between issues is not a problem, when they are properly linked, but initially finding the \gls{IMS} of another project can be a problem, when only the name or identifier of the related issue is given.
+
+Most experts answered question \ref{itm:ch5:expert_questions_solve} and question \ref{itm:ch5:expert_questions_reduce} together, 
+therefore the answers are also summarized s in this paragraph.
+As the first expert didn't see any problems in response to questions \ref{itm:ch5:expert_questions_problems} and \ref{itm:ch5:expert_questions_are_these_problems}, \gls{GropiusEI} does not solve or reduce any problems in his eyes.
+Another expert stated, that the problems he sees, which are the missing public \gls{IMS}, custom \gls{IMS} are not solved by \gls{GropiusEI} but all the points of question \ref{itm:ch5:expert_questions_are_these_problems} are reduced by \gls{GropiusEI}, even though other \glspl{IMS} also do that.
+One expert stated, that he thinks \gls{GropiusEI} solves all of the problems from question \ref{itm:ch5:expert_questions_are_these_problems}.
+According to another expert the concept reduces these problems as well as the need of keeping an overview over the components and their respective \gls{IMS} but the implementation still needs some work.
+The other three experts think \gls{GropiusEI} solves the problem of linking issues to artifacts of multiple projects.
+One of them also stated, that the problem of linking issues is solved by \gls{GropiusEI} in his eyes.
+Another expert also states, that navigating between issues is easy with \gls{GropiusEI}, but the links should have more than one type for even better overview.
+
+Only one expert can not imagine using \gls{GropiusEI} at all.
+Most other experts would not use it right now, as it lacks many features, especially the ability to synchronize data with the \gls{Gropius} back-end,
+but could imagine using it in the future, once these issues have been resolved.
+One expert would only use it, once it is available for IntelliJ IDEA or Visual Studio Code.
+Another point is also the support of \gls{Gropius} for various \gls{IMS}.
+One expert would, for example, only use \gls{GropiusEI}, if it has support for Jira.
+
+Finally, the expert who didn't see any problems with existing \gls{IMS} when working with issues affecting multiple independent projects, stated he has other problems with them, which are solved by \gls{GropiusEI}.
+As all major \glspl{IMS} are web-based, whenever they link to the source code, it is also opened in the browser,
+where various \gls{IDE} features for exploring or editing the code are not available.
+Furthermore, he thinks, that with existing \glspl{IMS} the effort for creating a new issue while working in the code is larger than required.
+In his eyes, both of these points are solved by \gls{GropiusEI}.
+
 \section{Discussion}
 \label{sec:ch5:s3}
 \section{Threats to Validity}
