@@ -14,16 +14,18 @@ then documenting the interfaces between components of a typical application.
 However, as the documentation and issues are spread over multiple projects
 and each may affect more than one project there are several challenges to managing these documents and issues effectively.
 For example changes to documentation may not be propagated to all teams. 
-Another example is, that issues found by one team may have the same root cause as issues found by another team, 
-however, the root cause may even be caused by a piece of code of a third team.
+Another example is, that issues found by one team may have the same root cause as issues found by another team.
+However, the root cause may even be caused by a piece of code of a third team.
 
-One possible approach to deal with this problem is introduced in \cite{Speth2019}.
+One possible approach to deal with this problem is introduced by Sandro Speth.\cite{Speth2019}.
 The proposed solution are so-called multi-project coding issues. 
 These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. 
 Additionally, traceability links between multiple issues and artifacts are proposed.
 As a concrete syntax, a graphical notation for these issues and links is introduced and implemented in a prototype framework. 
 The frontend of this framework is a web-based application with an architecture graph at its core.
-This graph is used to view and edit the system architecture and issues displayed with the introduced notation. 
+This graph is used to view and edit the system architecture and issues displayed with the introduced notation.
+The development on this has since been continued by Speth et al. \cite{speth2020gropius} and the framework is now called \gls{Gropius}.
+Therefore, the name \gls{Gropius} approach is used to refer to that concept as a whole.
 The system is a supportive tool for software architects and project managers to keep an overview over the services
 and dependencies between those and as well as the current issues and their influence on all components.
 
@@ -33,10 +35,10 @@ Similarly, when working on an issue a developer does not need to look at all iss
 Finally, it should be as easy as possible for developers to create a new issue, think about and discuss how it may relate to other issues, and write down their findings.
 A web-app,  which needs to be opened, the correct service selected, and the relevant file searched are all obstacles, which may impede a developer during this process. 
 
-The objective of this thesis is to develop, implement, and evaluate a concept for integrating this approach into the developer's \gls{IDE}.
+The objective of this thesis is to develop, implement, and evaluate a concept for integrating the \gls{Gropius} approach into the developer's \gls{IDE}.
 This way the workflow of a developer is disrupted as little as possible and most of these obstacles are removed.
 Developers can be shown all issues attached to a file or service as well as issues in components depending on it.
-Furthermore, they can create issues for the code they are currently looking at and can be aided in referencing any other relevant issues. 
+Furthermore, they can create issues for the code they are currently looking at and can be aided in referencing any other relevant issues.
 
 First, a concept for such an \gls{IDE} extension is developed based on the results of a requirements engineering process.
 Based on this concept an \gls{Eclipse} plugin is designed and implemented.
@@ -50,15 +52,15 @@ Many state that it solves problems they are actually facing when working with is
 Most give valuable feedback on how to improve the plugin.
 Some even say they would use the result once a few more features are added.
 
-The main contributions of this thesis are the concept for integrating the issue management approach introduced by \cite{Speth2019} into an \gls{IDE},
+The main contributions of this thesis are the concept for integrating the issue management \gls{Gropius} approach into an \gls{IDE},
 the implemented version of it in the form of an \gls{Eclipse} extension, and the evaluation of both through the expert review and survey.
 
 \section*{Thesis Structure}
 The thesis is structured as follows:
 \begin{description}
-	\item[Chapter~\ref{chap:ch2} -- \nameref{chap:ch2}:] In this chapter, the thesis' foundations of and related work are presented.
+	\item[Chapter~\ref{chap:ch2} -- \nameref{chap:ch2}:] In this chapter, the work this thesis' is based on as well as other research in this area is presented.
 	\item[Chapter~\ref{chap:ch3} -- \nameref{chap:ch3}:] This chapter introduces the developed concept.
 	\item[Chapter~\ref{chap:ch4} -- \nameref{chap:ch4}:] Here the design and implementation of the \gls{IDE} extension is described.
-	\item[Chapter~\ref{chap:ch5} -- \nameref{chap:ch5}:] The evaluation including the expert review and survey is described and discussed.
-	\item[Chapter~\ref{chap:ch6} -- \nameref{chap:ch6}:] In this chapter, the final conclusion of the thesis is presented.
+	\item[Chapter~\ref{chap:ch5} -- \nameref{chap:ch5}:] The realization and results of the expert review and survey are described and discussed.
+	\item[Chapter~\ref{chap:ch6} -- \nameref{chap:ch6}:] In this chapter, the thesis is summarized as well as possible future work highlighted.
 \end{description}

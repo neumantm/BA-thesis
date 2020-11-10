@@ -25,11 +25,11 @@ We decided against Android Studio and pyCharm, as they only support the developm
 All the other \glspl{IDE} support multiple languages allowing the extension to be used in a more diverse set of scenarios.
 
 Of the remaining four candidates the ability and complexity of creating extensions were researched.
-The \gls{IDE} with the easiest process to create plugins is Visual Studio Code \footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}.
-The second best is \gls{Eclipse} also having a lot of material helping with creating plugins for it, such as \cite{clayberg2006eclipse}.
+The \gls{IDE} with the easiest process to create plugins is Visual Studio Code\footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}.
+The second best is \gls{Eclipse} also having a lot of material helping with creating plugins for it, such as the book from Clayberg et al. \cite{clayberg2006eclipse}.
 Plugins are a core concept of both and are used to provide almost all features available in these \glspl{IDE}.
-Next, IntelliJ IDEA also has a fairly simple process for creating plugins \footnote{\url{https://jetbrains.org/intellij/sdk/docs/basics/getting_started.html}}.
-Finally, Visual Studio also supports creating plugins, but the process is more complex than with the previous three \footnote{\url{https://docs.microsoft.com/en-us/visualstudio/extensibility/starting-to-develop-visual-studio-extensions?view=vs-2019}}.
+Next, IntelliJ IDEA also has a fairly simple process for creating plugins\footnote{\url{https://jetbrains.org/intellij/sdk/docs/basics/getting_started.html}}.
+Finally, Visual Studio also supports creating plugins, but the process is more complex than with the previous three\footnote{\url{https://docs.microsoft.com/en-us/visualstudio/extensibility/starting-to-develop-visual-studio-extensions?view=vs-2019}}.
 Additionally, Visual Studio Extensions can only be developed on Windows.
 
 \Gls{Eclipse} scored second in both of the above criteria and the winners of both categories are worse in the other.
@@ -84,7 +84,7 @@ Therefore, a small script was created, which does all that automatically and res
 \label{sec:ch4:s3}
 As described in \cref{sec:ch3:s3}, the plugin is split into several components for portability reasons.
 Therefore, the prototype actually consists of a total of four eclipse plugins, as can be seen in \cref{fig:c4:component_diagram}.
-Moreover, it was decided to use a model-driven software development approach similar to the one described in \cite{beydeda2005model}.
+Moreover, it was decided to use a model-driven software development approach similar to the one described by Beydeda et al. \cite{beydeda2005model}.
 As a big part of the tool is a list and form for viewing and manipulating data, which can be described formally,
 large parts of these two \gls{UI} elements can be automatically generated that way.
 
@@ -109,7 +109,7 @@ Both, the specification of the required data and the creation of mutations is al
 The third plugin, just called \lstinline|ui|, implements all the \gls{UI} elements.
 It is the only plugin of the four that directly interacts with the \gls{Eclipse} \gls{IDE}.
 This way, it is the only plugin, which needs major changes when the tool is ported to another \gls{IDE}, which supports Java-based plugins.
-It uses the \gls{Parsley} framework introduced by \cite{bettini2014developing} to generate the issue list and issue details view 
+It uses the \gls{Parsley} framework introduced by Lorenzo Bettini \cite{bettini2014developing} to generate the issue list and issue details view 
 based on the data model from the \lstinline|data| component.
 
 The \lstinline|logic| plugin holds all classes containing logic needed by the \lstinline|ui|, which is not \gls{Eclipse} specific.
@@ -157,7 +157,7 @@ Most of them could be contributed to \gls{Parsley} after a little cleanup.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/screenshot_improvement_fromControl_arrow.png}
-	\caption{Difference between original and new control for lists}
+	\caption{Difference between original and new Control for Lists}
 	\label{fig:c4:screenshot_improvement_formControl}
 \end{figure}
 One example is the \gls{UI} element displayed inside a form for the value of properties, which are lists.
@@ -179,7 +179,7 @@ This problem was detected too late to change the overall architecture of the plu
 mainly because the decision to switch to \gls{graphql} for the \gls{Gropius} \gls{API} was made after the concept for \gls{GropiusEI} was already done.
 However, to achieve this, a complex query needs to be sent to the server.
 Additionally, no appropriate \gls{java} library could be found for using \gls{graphql} \glspl{API} without manually generating the queries and manually parsing the responses. 
-In the end, some open-source ruby scripts \footnote{\url{https://github.com/Shopify/graphql_java_gen}} were used to generate helper classes from the \gls{Gropius} \gls{graphql} schema.
+In the end, some open-source ruby scripts\footnote{\url{https://github.com/Shopify/graphql_java_gen}} were used to generate helper classes from the \gls{Gropius} \gls{graphql} schema.
 The next problem was, that the mock-up of the back-end used to implement the \lstinline|api-binding| component is not sophisticated enough.
 The returned data is not consistent in itself, which prevents a correct transformation into the \gls{GropiusEI} data model.
 As the real back-end would not be ready in time, the decision was made to halt implementing the \lstinline|api-binding| plugin for now.
