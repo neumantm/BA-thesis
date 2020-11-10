@@ -202,8 +202,19 @@ as long as it supports \gls{java}-based plugins.
 
 \begin{figure}[!h]
 	\centering
+	\includegraphics[width=\textwidth]{graphics/mockOverview.pdf}
+	\caption{Mock-up of a possible \gls{IDE} window}
+	\label{fig:c3:mockup_overview}
+\end{figure}
+\Cref{fig:c3:mockup_overview} shows one possible layout for the main \gls{IDE} window while the extension is being used.
+The issue list can be seen in the lower part of the image, while the issue details \gls{UI} element is on the right.
+In the center is the \gls{IDE}'s editor with the vertical bar for markers on the left edge of it.
+However, the aim is, to allow the user to move all of these parts to wherever in the \gls{IDE} is best for his personal process.
+
+\begin{figure}[!h]
+	\centering
 	\includegraphics[width=\textwidth]{graphics/concept_mockup_issueList.png}
-	\caption{Mock-up for Issue List}
+	\caption{Mock-up for Issue List (1)}
 	\label{fig:c3:mockup_issueList}
 \end{figure}
 The issue list is a table of issues with columns for the various properties of those, 
@@ -219,7 +230,7 @@ Finally, the visible columns can also be configured by the user.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{graphics/concept_mockup_issueDetails.png}
-	\caption{Mock-up for Issue Details}
+	\caption{Mock-up for Issue Details (2)}
 	\label{fig:c3:mockup_issueDetails}
 \end{figure}
 The issue details \gls{UI} element shows all attributes for the issue selected in the issue list.
@@ -233,7 +244,7 @@ In both cases, additional dialogs are used to allow editing of the more complex 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{graphics/concept_mockup_issueMarker_arrow.png}
-	\caption{Mock-up of Issue in the Marker Column}
+	\caption{Mock-up of Issue in the Marker Column (3)}
 	\label{fig:c3:mockup_issueMarkers}
 \end{figure}
 Moreover, the issues are displayed as markers in the \gls{IDE}'s editor, whenever a file with issues is open in the editor.
