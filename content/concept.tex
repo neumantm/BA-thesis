@@ -121,32 +121,34 @@ These requirements are listed below, split into those expected from any issue ma
 \newcounter{enumarteCounter} % For saving the counter between the two enumerates
 
 First, the requirements expected from any issue management plugin:
+As a developer, I want to ...
 \begin{enumerate}
-	\item As a developer, I want to have a list of all open issues. \label{itm:ch3:req:filter_open}
-	\item As a developer, I want to have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
-	\item As a developer, I want to have a searchable list of issues. \label{itm:ch3:req:filter_search}
-	\item As a developer, I want to have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
-	\item As a developer, I want to have a list of issues that can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
-	\item As a developer, I want to have a list of issues that can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
-	\item As a developer, I want to quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
-	\item As a developer, I want to be able to see all details for a specific issue.
-	\item As a developer, I want to be able to jump to a related issue from my currently viewed issue.
-	\item As a developer, I want to be able to quickly open a relevant source file at the relevant line for an issue, even if it is in another eclipse project (as long as that project is in my workspace).
-	\item As a developer, I want to be shown which lines of a source file are relevant for an issue. (For example through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
-	\item As a developer, I want to be able to edit every property of an issue that I have write access to.
-	\item As a developer, I want to be able to create a new issue.
-	\item As a developer, I want to be able to create a new issue for some lines of code without manually entering the source file and lines in a dialog.
+	\item ... have a list of all open issues. \label{itm:ch3:req:filter_open}
+	\item ... have a list of all issues assigned to me. \label{itm:ch3:req:filter_me}
+	\item ... have a searchable list of issues. \label{itm:ch3:req:filter_search}
+	\item ... have a list of issues that can be filtered by tags or labels. \label{itm:ch3:req:filter_labels}
+	\item ... have a list of issues that can be filtered to only show issues relevant to my currently opened project. \label{itm:ch3:req:filter_open project}
+	\item ... have a list of issues that can be filtered to only show issues relevant to my currently opened source file. \label{itm:ch3:req:filter_open_file}
+	\item ... quickly see the type of an issue in this list. \label{itm:ch3:req:list_issue_type}
+	\item ... be able to see all details for a specific issue.
+	\item ... be able to jump to a related issue from my currently viewed issue.
+	\item ... be able to quickly open a relevant source file at the relevant line for an issue, even if it is in another eclipse project (as long as that project is in my workspace).
+	\item ... be shown which lines of a source file are relevant for an issue. (For example through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
+	\item ... be able to edit every property of an issue that I have write access to.
+	\item ... be able to create a new issue.
+	\item ... be able to create a new issue for some lines of code without manually entering the source file and lines in a dialog.
 	\setcounter{enumarteCounter}{\value{enumi}} % store counter to continue later
 \end{enumerate}
 
 These are the requirements expected from such a plugin integrated into \gls{Gropius}:
+As a developer, I want
 \begin{enumerate}
 	\setcounter{enumi}{\value{enumarteCounter}} % restore counter from above
-	\item As a developer, I want the system architecture graph in my web browser to focus on the component I've selected in eclipse.
-	\item As a developer, I want the system architecture graph in my web browser to highlight the issue I've selected in eclipse.
-	\item As a developer, I want to be able to open details about an issue in the eclipse view through the architecture graph in my web browser.
-	\item As a developer, I want to be able to open a relevant source code line of an issue in eclipse from the architecture graph in my web browser.
-	\item As a developer, I want to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example in meetings.
+	\item the system architecture graph in my web browser to focus on the component I've selected in eclipse.
+	\item the system architecture graph in my web browser to highlight the issue I've selected in eclipse.
+	\item to be able to open details about an issue in the eclipse view through the architecture graph in my web browser.
+	\item to be able to open a relevant source code line of an issue in eclipse from the architecture graph in my web browser.
+	\item to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example in meetings.
 \end{enumerate}
 
 \section{Concept for the Issue Icons}
@@ -185,7 +187,7 @@ The following properties were chosen to be visualized with decreasing priority.
 Finally, another aspect, that could be visualized is the visibility of the issue as some \glspl{IMS} can have issues that are only visible internally.
 However, it was decided against it for now, as it didn't seem that important of a property and the Gropius system currently doesn't support it anyway.
 
-\section{Concept for the Prototype Plugin}
+\section{Concept for the \gls{IDE} Extension}
 \label{sec:ch3:s3}
 Before starting with the detailed design and implementation of the prototype tool, a rough concept for it needed to be created.
 Most parts of this were already done during the thesis' proposal process and a version of this concept was included in the proposal paper.
