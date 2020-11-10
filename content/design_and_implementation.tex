@@ -28,7 +28,7 @@ Of the remaining four candidates the ability and complexity of creating extensio
 The \gls{IDE} with the easiest process to create plugins is Visual Studio Code \footnote{\url{https://code.visualstudio.com/api/get-started/your-first-extension}}.
 The second best is \gls{Eclipse} also having a lot of material helping with creating plugins for it, such as \cite{clayberg2006eclipse}.
 Plugins are a core concept of both and are used to provide almost all features available in these \glspl{IDE}.
-Next, IntelliJ IDEA also has a fairly simple process for creating plugins \footcite{\url{https://jetbrains.org/intellij/sdk/docs/basics/getting_started.html}}.
+Next, IntelliJ IDEA also has a fairly simple process for creating plugins \footnote{\url{https://jetbrains.org/intellij/sdk/docs/basics/getting_started.html}}.
 Finally, Visual Studio also supports creating plugins, but the process is more complex than with the previous three \footnote{\url{https://docs.microsoft.com/en-us/visualstudio/extensibility/starting-to-develop-visual-studio-extensions?view=vs-2019}}.
 Additionally, Visual Studio Extensions can only be developed on Windows.
 
@@ -57,12 +57,15 @@ This greatly reduces the possible detail in the parts.
 	\label{fig:c4:icon_parts}
 \end{figure}
 \Cref{fig:c4:icon_parts} shows all the parts described above.
-The first row contains the bugs from open to done, the second the enhancements, and the third the annotations for the other three properties.
-The left-most annotation is included in the icon when the issue causes problems in another project.
+The first row contains the bugs in all three possible states, open, work-in-progress and closed.
+In the second row are the enhancements with the same three states.
+The third row contains the annotations for the other three properties.
+The first annotation is used when this issue is the cause of another issue in some other component.
 In the finished icon, it is located in the top right corner.
-The second symbol in the last row is the annotation for when the issue is just a symptom of an issue from another project.
+The second symbol is the annotation for when the issue is caused by another issue and is therefore just a symptom of that issue.
 On the final icons, this is shown in the top left.
-The third symbol represents the fact, that the issue is assigned to the current developer and is added to the bottom left of the final icon.
+The third symbol represents the fact, that the issue is assigned to the current developer.
+It is added in the bottom left of the final icon.
 
 \begin{figure}[!h]
 	\centering
@@ -88,7 +91,7 @@ large parts of these two \gls{UI} elements can be automatically generated that w
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{graphics/Component_Diagram.png}
-	\caption{Prototype Component Diagram}
+	\caption{Prototype Component Diagram \\ \footnotesize{The same figure can be found enlarged in \cref{chap:appendix:design_docs}}}
 	\label{fig:c4:component_diagram}
 \end{figure}
 
@@ -119,7 +122,7 @@ But it was not modeled, as the idea of the messaging component was dropped from 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{graphics/dataClassDiagram.png}
-	\caption{Prototype Data Model Class Diagram}
+	\caption{Prototype Data Model Class Diagram \\ \footnotesize{The same figure can be found enlarged in \cref{chap:appendix:design_docs}}}
 	\label{fig:c4:data_class_diagram}
 \end{figure}
 The class diagram of the data model for \gls{GropiusEI} used to generate the \lstinline|data| component can be seen in \cref{fig:c4:data_class_diagram}.
@@ -188,7 +191,7 @@ Everything, that was implemented is presented in the next few paragraphs.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.4\textwidth]{graphics/screenshot_gropius_ei_issue_list.png}
+	\includegraphics[width=0.5\textwidth]{graphics/screenshot_gropius_ei_issue_list.png}
 	\caption{Prototype Issue List}
 	\label{fig:c4:screenshot_issue_list}
 \end{figure}
@@ -198,7 +201,7 @@ This is the case because \gls{Parsley} provides such a view and implementing int
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.4\textwidth]{graphics/screenshot_gropius_ei_issue_list_filtered_sorted.png}
+	\includegraphics[width=0.5\textwidth]{graphics/screenshot_gropius_ei_issue_list_filtered_sorted.png}
 	\caption{Prototype Issue List with Filter and Sorting}
 	\label{fig:c4:screenshot_issue_list_filtered_sorted}
 \end{figure}
@@ -209,14 +212,14 @@ Selecting the displayed columns is also possible through the menu on the top rig
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{graphics/screenshot_gropius_ei_edit_list.png}
+	\includegraphics[width=0.8\textwidth]{graphics/screenshot_gropius_ei_edit_list.png}
 	\caption{Prototype Edit Developers Dialog}
 	\label{fig:c4:screenshot_edit_list}
 \end{figure}
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{graphics/screenshot_gropius_ei_edit_locations.png}
+	\includegraphics[width=0.8\textwidth]{graphics/screenshot_gropius_ei_edit_locations.png}
 	\caption{Prototype Edit Locations Dialog}
 	\label{fig:c4:screenshot_edit_locations}
 \end{figure}

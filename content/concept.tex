@@ -24,10 +24,10 @@ This process is split into two stages, each with the three activities of require
 
 \begin{figure}[!h]
 	\centering
-	\tikzstyle{mybox} = [draw=blue!40, fill=blue!20, very thick,
+	\tikzstyle{mybox} = [draw=gray!55, fill=gray!15, very thick,
 	rectangle, rounded corners, inner sep=5pt, inner ysep=5pt,
 	minimum width=0.45\linewidth, minimum height=80pt, text width=0.45\linewidth]
-	\tikzstyle{title} = [fill=blue!40, rectangle, rounded corners]
+	\tikzstyle{title} = [fill=gray!35, rectangle, rounded corners]
 	\begin{tikzpicture}
 	\node[mybox] (box1) {
 		\begin{varwidth}{\linewidth}\begin{itemize}
@@ -78,12 +78,12 @@ This process is split into two stages, each with the three activities of require
 	};
 	\node[title] (box6title) at (box6.north) {Requirements Validation};
 	
-	\path [->,draw,thick] (box1) -- (box2);
-	\path [->,draw,thick] (box2) -- (box3title);
-	\path [->,draw,thick] (box3) -- (box4);
-	\path [->,draw,thick] (box1) -- (box4title);
-	\path [->,draw,thick] (box4) -- (box5title);
-	\path [->,draw,thick] (box5) -- (box6);
+	\path [->,draw,very thick] (box1) -- (box2);
+	\path [->,draw,very thick] (box2) -- (box3title);
+	\path [->,draw,very thick] (box3) -- (box4);
+	\path [->,draw,very thick] (box1) -- (box4title);
+	\path [->,draw,very thick] (box4) -- (box5title);
+	\path [->,draw,very thick] (box5) -- (box6);
 	\end{tikzpicture}
 	\caption{Requirements Engineering Process}
 	\label{fig:requirmentsProcess}
