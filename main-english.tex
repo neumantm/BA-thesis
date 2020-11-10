@@ -30,7 +30,7 @@
 
 
 \usepackage[
-  title={IDE Support of Issue Management for Multi-Component Architectures},
+  title={IDE Support of Issue Management for Component-based Architectures},
   author={Tim Neumann},
   type=bachelor,
   institute=istesqa, % or other institute names - or just a plain string using {Demo\\Demo...}
@@ -92,24 +92,37 @@
 
 \section*{Abstract}
 \textit{Context.} Today software is often developed in architectures with many independent components, multiple projects, and even multiple independent teams. 
-One of the key challenges in such an environment is managing software issues like bugs or enhancement requests. 
-One possible approach to deal with this problem was recently introduced by Speth in the form of multi-project coding issues and traceability links
+One of the key challenges in such an environment is managing software issues such as bugs or enhancement requests. 
+One possible approach to deal with this problem was recently introduced by Sandro Speth in the form of multi-project coding issues and traceability links
 as well as his graphical notation for them. \\
-\textit{Problem.} The tool developed by Speth is web-based and, therefore, sub-optimal for developers, 
+\textit{Problem.} The tool developed by Sandro Speth is web-based and, therefore, sub-optimal for developers, 
 who do the majority of their work in an \gls{IDE}. 
-With it, a developer needs to regularly switch between two different environments whenever he is working on an issue. 
-Furthermore, advanced features like opening the relevant software artifact in the editor of the \gls{IDE} are not possible. \\
+With it, a developer needs to switch between two different environments whenever he is working on an issue. 
+Furthermore, advanced features such as opening the relevant software artifact in the editor of the \gls{IDE} are not possible. \\
 \textit{Objective.} The objective of this thesis is to develop a concept for an issue management \gls{IDE} extension specialized for this kind of environment and to evaluate if, how much, and how such an extension helps developers. \\
 \textit{Method.} To achieve this, a prototype extension is designed and implemented, which is then reviewed by experts.
 Finally, an expert survey is conducted to determine how useful the concept is.\\
 \textit{Result.} A solid concept for such an issue management extension has been developed. 
-Most experts appreciate the idea. Additionally, many experts state that it solves various problems they face when working with issues in a multi-component, multi-team environment.\\
+Most experts appreciate the idea. Additionally, many experts state that it solves various problems they face when working with issues in a multi-project, multi-team, component-based environment.\\
 \textit{Conclusion.} The developed \gls{IDE} extension can practically help developers manage software issues in the challenging environments of multi-project, multi-team architectures. Additionally, the introduced concept can be used as a basis for extensions for other \glspl{IDE}.
 \cleardoublepage
 
 \section*{Kurzfassung}
-\lipsum[1-1]
+\textit{Kontext.} Software wird heute oft in Architekturen mit vielen unabhängigen Komponenten, in mehreren Projekten und sogar mehreren unabhängigen Teams entwickelt. 
+Eine der größten Herausforderungen in einer solchen Umgebung ist die Verwaltung von sogenannten Software Problemen (\textit{Software Issues}) wie Bugs oder Erweiterungsanforderungen. 
+Ein möglicher Ansatz zur Bewältigung dieses Problems wurde kürzlich von Sandro Speth in Form von \textit{multi-project coding issues} (Multiprojekt-Kodierungsprobleme) und \textit{traceability links} (Nachverfolgungsverküpfungen), zusammen mit seiner grafische Notation für diese, vorgestellt. \\
+\textit{Problem.} Das von Sandro Speth entwickelte Tool ist webbasiert und daher für Entwickler suboptimal, 
+die den Großteil ihrer Arbeit in einer integrierten Entwicklungsumgebung (IDE) erledigen. 
+Mit diesem muss ein Entwickler zwischen zwei verschiedenen Umgebungen wechseln, wenn er an einem Problem arbeitet. 
+Darüber hinaus sind erweiterte Funktionen wie das Öffnen des relevanten Softwareartefakten im Editor der IDE nicht möglich. \\
+\textit{Ziel.} Das Ziel dieser Arbeit ist es, ein Konzept für eine IDE Erweiterung zur Problemverwaltung zu entwickeln, welche für eine auf diese Art von Umgebung spezialisiert ist, und zu evaluieren, ob, wie und in welchem Umfang eine solche Erweiterung den Entwicklern hilft. \\
+\textit{Methode.} Um dies zu erreichen, wird eine prototypische Erweiterung entworfen und implementiert, die dann von Experten untersucht wird.
+Schließlich wird eine Expertenbefragung durchgeführt, um festzustellen, wie nützlich das Konzept ist. \\
+\textit{Ergebnis.} Ein solides Konzept für eine solche Problemverwaltungserweiterung wurde entwickelt. 
+Die meisten Experten schätzen die Idee. Zusätzlich geben viele Experten an, dass diese verschiedene Probleme löst, mit denen sie bei der täglichen Arbeit mit Software Problemen in einer komponentenbasierten Umgebung mit mehreren Projekten und Teams konfrontiert sind.\\
+\textit{Fazit.} Die entwickelte \gls{IDE} Erweiterung kann Entwicklern praktisch helfen, Software Probleme in den herausfordernden Umgebungen von Multi-Projekt-Multi-Team-Architekturen zu bewältigen. Zusätzlich kann das vorgestellte Konzept als Grundlage für Erweiterungen für andere IDEs verwendet werden.
 \cleardoublepage
+
 % BEGIN: Verzeichnisse
 
 \iftex4ht
@@ -226,6 +239,7 @@ Most experts appreciate the idea. Additionally, many experts state that it solve
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\todo{Remove all german words}
 
 \input{content/introduction}
 \input{content/foundations_and_related_work}
