@@ -153,6 +153,7 @@ Additionally, a \lstinline|Location| can be in a \lstinline|Component| or an \ls
 
 \section{Eclipse Plugin Implementation}
 \label{sec:ch4:s4}
+
 During the implementation phase, one of the biggest challenges was to understand and to correctly use \gls{Parsley} as well as \gls{EMF}.
 Not a lot of documentation and tutorials could be found for either of them.
 However, as both are open source, answers for specific questions could be searched and found in the code itself.
@@ -202,10 +203,11 @@ Everything that was implemented is presented in the next few paragraphs.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/screenshot_gropius_ei_issue_list.png}
+	\includegraphics[width=0.45\textwidth]{graphics/screenshot_gropius_ei_issue_list.png}
 	\caption{Prototype Issue List}
 	\label{fig:c4:screenshot_issue_list}
 \end{figure}
+
 As stated in \cref{sec:ch3:s3} the main elements of \gls{GropiusEI} are the issue list and the issue detail view.
 Deviating from the concept, those two elements are implemented in one big view element, as shown in \cref{fig:c4:screenshot_issue_list}.
 This is the case because \gls{Parsley} provides such a view, and implementing interactions between the two parts is easier that way.
@@ -219,17 +221,18 @@ Currently, the annotations for this issue being caused by another or causing ano
 The entries of columns with a list of values are not sorted in any way but display the values in the order they are contained in the respective list for this property.
 This list is initially ordered by when the value was added but can be reordered by the user in the dialog for editing that property.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/screenshot_gropius_ei_issue_list_filtered_sorted.png}
-	\caption{Prototype Issue List with Filter and Sorting}
-	\label{fig:c4:screenshot_issue_list_filtered_sorted}
-\end{figure}
 As you can see in \cref{fig:c4:screenshot_issue_list_filtered_sorted}, the issue list also supports sorting by a column.
 This is done by clicking on the column header.
 Furthermore, filtering is supported using the buttons in the bar on the top edge of the view.
 Currently, only the filters \lstinline|Only show open issues| and \lstinline|Only show issues assigned to me| are implemented. 
 However, all the other filters specified in \cref{sec:ch3:s3} should be fairly straight forward to include.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{graphics/screenshot_gropius_ei_issue_list_filtered_sorted.png}
+	\caption{Prototype Issue List with Filter and Sorting}
+	\label{fig:c4:screenshot_issue_list_filtered_sorted}
+\end{figure}
 
 \Cref{fig:c4:screenshot_issue_list} also shows the details view, which additionally is the form for editing a selected issue.
 On the top of that form, the icon and the title of the issue can be seen.

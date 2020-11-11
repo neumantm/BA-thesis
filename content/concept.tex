@@ -200,6 +200,7 @@ Furthermore, the plugin is split into multiple components,
 of which only one is specific to the supported \gls{IDE}, while the others are reusable for other \glspl{IDE} with minimal changes.
 That way, the amount of work to port it for another \gls{IDE} is minimized,
 as long as it supports \gls{java}-based plugins.
+\shortpage
 
 \begin{figure}[!h]
 	\centering
@@ -227,6 +228,7 @@ by issue state, assignee, text contained in the title or description,
 labels as well as whether the issue is relevant to the open \gls{IDE} project or the open file.
 Furthermore, it is possible to sort the table based on any column. 
 Finally, the visible columns can also be configured by the user.
+\shortpage
 
 \begin{figure}[!h]
 	\centering
@@ -258,13 +260,6 @@ optionally opening a dialog to enter details for the new issue.
 Second, it is possible to mark some lines in the editor and create a new issue for them.
 In this case, the new issue already has the correct location selected.
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{graphics/concept_gropius_frontend_messaging.png}
-	\caption{Messaging Concept for Gropius Frontend Integration}
-	\label{fig:c3:concept_gropius_messaging}
-\end{figure}
-
 Finally, the tool is connected to the existing web \gls{UI} with the help of a messaging component.
 That way it is possible to enable synchronization between the plugin and the web user interface, 
 such that selecting an issue in one will cause the other to also jump to the same issue and select it accordingly. 
@@ -273,3 +268,10 @@ In addition to this, special topics, for example, for meetings are a possibility
 such that one developer can select an issue and the same is selected for all other participants of the meeting. 
 \cref{fig:c3:concept_gropius_messaging} shows the basic architecture planned for this feature. 
 The plugin, as well as the web user interface, communicate with the back-end through the \gls{graphql} \gls{API} and with each other using a messaging component.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{graphics/concept_gropius_frontend_messaging.png}
+	\caption{Messaging Concept for Gropius Frontend Integration}
+	\label{fig:c3:concept_gropius_messaging}
+\end{figure}
