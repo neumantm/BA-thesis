@@ -10,12 +10,19 @@ discovered using the process described in \cref{ssec:ch2:ss2.1}.
 \section{Foundations}
 \label{sec:ch2:s1}
 This section describes the foundations this work is based on and which may be useful for understanding this thesis.
-First, \cref{ssec:ch2:ss1.1} covers the idea of software issues and issue management systems in general.
+First, in \cref{ssec:ch2:ss1.0} the query language \gls{graphql} is  introduced.
+After that, \cref{ssec:ch2:ss1.1} covers the idea of software issues and issue management systems in general.
 Then, in \cref{ssec:ch2:ss1.2}, a concept for issue management in environments where multiple software components, 
 which are developed by independent teams, is described.
 \Cref{ssec:ch2:ss1.3} introduces the concept of \glspl{IDE} and how they can be extended 
 with a focus on \gls{Eclipse} as the prototype developed for this thesis is an \gls{Eclipse} plugin.
 Finally, \cref{ssec:ch2:ss1.4} covers two frameworks used in the implementation of that plugin.
+
+\subsection{GraphQL}
+\label{ssec:ch2:ss1.0}
+\gls{graphql} is a query language developed by Facebook, where the client needs to specify the parts of data to return \cite{grpahql2018}.
+Furthermore, changed data cannot just be sent to the server to be updated, but the changes must be recorded and split into so-called mutations,
+which can then be sent to the server.
 
 \subsection{Software Issues and \acrlongpl{IMS}}
 \label{ssec:ch2:ss1.1}
@@ -50,17 +57,31 @@ An in-depth comparison of a few well known \glspl{IMS} is provided by Jan{\'a}k,
 Managing documentation and issues for multi-project, multi-team scenarios efficiently is a major problem for the software development process  \cite{mahmood2015identifying}. This assertion is supported by some posts in forums of Jira and Redmine asking for solutions to this problem\footnote{\url{https://www.redmine.org/boards/1/topics/21939}}\footnote{\url{https://community.atlassian.com/t5/Jira-questions/How-do-others-work-with-issues-affecting-multiple-projects/qaq-p/399950}}\footnote{\url{https://community.atlassian.com/t5/Jira-Software-questions/Share-one-issue-quot-ticket-quot-across-multiple-projects-and/qaq-p/407534}}. Another strong argument supporting it are the results of an expert survey conducted by Sandro Speth \cite{Speth2019}, which indicate that industry experts also see this as a problem.
 
 One possible approach to deal with this problem is introduced in \cite{Speth2019}.
-The proposed solution are so-called multi-project coding issues. These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. Additionally, traceability links between multiple issues and artifacts are proposed. As a concrete syntax, a graphical notation for these issues and links is introduced and implemented in a prototype framework. The frontend of this framework is a web-based application with an architecture graph at its core.
+The proposed solution are so-called multi-project coding issues. These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. 
+Additionally, traceability links between multiple issues and artifacts are proposed. 
+For example, one issue about a crash could link to another issue describing the Exception causing the crash, which in turn links to the piece of code causing it and the part of the architecture specification involved.
+As a concrete syntax, a graphical notation for these issues and links is introduced and implemented in a prototype framework. The frontend of this framework is a web-based application with an architecture graph at its core.
 This graph is used to view and edit the system architecture and issues displayed with the introduced notation. 
 
 Speth et al. \cite{speth2020gropius} further refine this concept and introduces a tool named \gls{Gropius}, which is  based on the prototype mentioned above.
 Among other things, the paper presents the architecture of the \gls{Gropius} system. 
 One relevant fact for this thesis is, that the \gls{Gropius} back-end provides a \gls{graphql} \gls{API} for the front-end,
 which can also be used by the tool of this thesis.
+The \gls{Gropius} system does not store just store the issues in its own database, but works with one or more traditional \glspl{IMS} to retrieve and store the issues.
+Therefore, the system can be used by some developers without causing problems for other colleagues not using it.
 
-\gls{graphql} is a query language developed by Facebook, where the client needs to specify the parts of data to return \cite{grpahql2018}.
-Furthermore, changed data can not just be sent to the server to be updated, but the changes must be recorded and split into so-called mutations,
-which can then be sent to the server.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{graphics/domainMetaModel.png}
+	\caption{Domain meta Model of the \gls{Gropius} system \\ \footnotesize{The same figure can be found enlarged in \cref{chap:appendix:design_docs}}}
+	\label{fig:c2:domain_meta_model}
+\end{figure}
+
+It also introduces a domain meta model for the \gls{Gropius} system, as depicted in \cref{fig:c2:domain_meta_model} \cite{speth2020gropius}.
+At the center you can see the Cross-Component-Issue, which represents multiple normal issues.
+These Cross-Component-Issues are stored in the Cross-Component-Issue-Management-System, for example an instance of the \gls{Gropius} system.
+That is connected to multiple traditional \glspl{IMS}, which hold the normal issues.
+In addition to some simple attributes like the title, text body, and the flag for whether the issue is open, a Cross-Component-Issue also has references to the assigned developers, its labels, and the components or interfaces it occurs in.
 
 \subsection{Extending \acrlongpl{IDE}}
 \label{ssec:ch2:ss1.3}

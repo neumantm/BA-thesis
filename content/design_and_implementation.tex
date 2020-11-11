@@ -126,6 +126,7 @@ But it was not modeled, as the idea of the messaging component was dropped from 
 	\label{fig:c4:data_class_diagram}
 \end{figure}
 The class diagram of the data model for \gls{GropiusEI} used to generate the \lstinline|data| component can be seen in \cref{fig:c4:data_class_diagram}.
+It is based on the Domain Meta Model shown in \cref{ssec:ch2:ss1.2}.
 At the core of the data model is the \lstinline|CrossComponentIssue|, with a title, text body, and a flag indicating whether it is open.
 Additionally, it has various references to other objects, such as the assigned developers.
 
@@ -198,6 +199,15 @@ Everything, that was implemented is presented in the next few paragraphs.
 As stated in \cref{sec:ch3:s3} the main elements of \gls{GropiusEI} are the issue list and the issue detail view.
 Deviating from the concept, those two elements are implemented in one big view element, as can be seen in \cref{fig:c4:screenshot_issue_list}.
 This is the case because \gls{Parsley} provides such a view and implementing interactions between the two parts is easier that way.
+The issue list is in the upper half of the picture. 
+It consists of multiple columns, each responsible for one property of the issues.
+By default, only the title and label columns are shown, but the user can change this through the menu on the top right.
+In theory all properties, that can be seen in the form in the lower half of the image, can also be displayed as columns in the list.
+However, especially the text body does not make a lot of sense to be displayed in the list, as it can take a lot of space.
+In the first column of the list, the icons from \ref{sec:ch4:s2} are displayed in addition to the property of that column.
+Currently, the annotations for this issue being caused by another or causing another issue are not used, because that feature has not yet been implemented.
+The entries of columns with a list of values is not sorted in any way, but displays the values in the order they are contained in the respective list for this property.
+This list is initially ordered by when the value was added, but can be reordered by the user in the dialog for editing that property.
 
 \begin{figure}[!h]
 	\centering
@@ -205,10 +215,20 @@ This is the case because \gls{Parsley} provides such a view and implementing int
 	\caption{Prototype Issue List with Filter and Sorting}
 	\label{fig:c4:screenshot_issue_list_filtered_sorted}
 \end{figure}
-As you can see in \cref{fig:c4:screenshot_issue_list_filtered_sorted}, the issue list also supports sorting by a column as well as filtering using the buttons in the bar on the top edge of the view.
+As you can see in \cref{fig:c4:screenshot_issue_list_filtered_sorted}, the issue list also supports sorting by a column.
+This is done by clicking on the column header.
+Furthermore, filtering is supported using the buttons in the bar on the top edge of the view.
 Currently, only the filters \lstinline|Only show open issues| and \lstinline|Only show issues assigned to me| are implemented, 
 but all the other filters specified in \cref{sec:ch3:s3} should be fairly straight forward to include.
-Selecting the displayed columns is also possible through the menu on the top right.
+
+\Cref{fig:c4:screenshot_issue_list} also shows the details view, which additionally is the form for editing a selected issue.
+On the top of that form you can see the icon and the title of the issue.
+Below that, all properties are displayed.
+Similar to the issue list, the properties with multiple values is ordered according to the order in the data instead of being sorted in some way.
+For the \lstinline|Linked Issues| and the \lstinline|Locations| each value is a link, 
+selecting the correct issue in the list and jumping to that location in the code respectively.
+To change a textual property, the user can simply type in the corresponding text area.
+The properties, which contain a list of values can be modified using the button to the right.
 
 \begin{figure}[!h]
 	\centering
@@ -217,6 +237,11 @@ Selecting the displayed columns is also possible through the menu on the top rig
 	\label{fig:c4:screenshot_edit_list}
 \end{figure}
 
+When that button is pressed a dialog similar to the one in \cref{fig:c4:screenshot_edit_list} is opened.
+With it, the user can select the values for that issue from a list of all possible values for the property.
+This dialog also allows the reordering of the values mentioned above.
+Changes done in the dialog are applied when the \lstinline|Ok| button is pressed.
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{graphics/screenshot_gropius_ei_edit_locations.png}
@@ -224,14 +249,14 @@ Selecting the displayed columns is also possible through the menu on the top rig
 	\label{fig:c4:screenshot_edit_locations}
 \end{figure}
 
-\Cref{fig:c4:screenshot_issue_list} also shows the details view, which additionally is the form for editing a selected issue.
-The properties, which contain multiple values can be modified using the button to the right.
-When that button is pressed a dialog similar to the one in \cref{fig:c4:screenshot_edit_list} is opened.
-Changes done in the dialog are applied when the \lstinline|Ok| button is pressed.
-The only exception is the \lstinline|locations| property.
+The only exception for the editing dialogs is the \lstinline|locations| property.
 For those a dialog (shown in \cref{fig:c4:screenshot_edit_locations}), which allows creating and editing locations is opened.
-For the \lstinline|Linked Issues| and the \lstinline|Locations| each value is a link, 
-selecting the correct issue in the list and jumping to that location in the code respectively.
+Using the \lstinline|New| button a new location is added to the list of locations for that issue.
+Than it as well as any existing location can be edited with the left half of the dialog.
+
+After all changes the issue list is in an unsaved state, indicated by a star in the view name in the tab of the view.
+To save the changes, all usual ways to save a resource in \gls{Eclipse} can be used, such as the save button in the toolbar.
 
 The green plus button seen above the issue list in \cref{fig:c4:screenshot_issue_list} can be used to create new issues.
+It adds a new issue with empty properties to the list, which can then be edited using the form below.
 The feature for creating issues directly from some lines of code has not yet been implemented.
