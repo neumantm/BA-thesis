@@ -9,10 +9,10 @@ discovered using the process described in \cref{ssec:ch2:ss2.1}.
 
 \section{Foundations}
 \label{sec:ch2:s1}
-This section describes the foundations, this work is based on and which may be useful for understanding this thesis.
+This section describes the foundations this work is based on and which may be useful for understanding this thesis.
 First, \cref{ssec:ch2:ss1.1} covers the idea of software issues and issue management systems in general.
-Then, a concept for issue management in environments where multiple software components, 
-which are developed by independent teams, is described in \cref{ssec:ch2:ss1.2}.
+Then, in \cref{ssec:ch2:ss1.2}, a concept for issue management in environments where multiple software components, 
+which are developed by independent teams, is described.
 \Cref{ssec:ch2:ss1.3} introduces the concept of \glspl{IDE} and how they can be extended 
 with a focus on \gls{Eclipse} as the prototype developed for this thesis is an \gls{Eclipse} plugin.
 Finally, \cref{ssec:ch2:ss1.4} covers two frameworks used in the implementation of that plugin.
@@ -47,7 +47,7 @@ An in-depth comparison of a few well known \glspl{IMS} is provided by Jan{\'a}k,
 
 \subsection{Issue Management in Multi-Team, Multi-Component Environments (Gropius)}
 \label{ssec:ch2:ss1.2}
-Managing documentation and issues for multi-team, multi-project scenarios efficiently is a major problem for the software development process  \cite{mahmood2015identifying}. This assertion is supported by some posts in forums of Jira and Redmine asking for solutions to this problem\footnote{\url{https://www.redmine.org/boards/1/topics/21939}}\footnote{\url{https://community.atlassian.com/t5/Jira-questions/How-do-others-work-with-issues-affecting-multiple-projects/qaq-p/399950}}\footnote{\url{https://community.atlassian.com/t5/Jira-Software-questions/Share-one-issue-quot-ticket-quot-across-multiple-projects-and/qaq-p/407534}}. Another strong argument supporting it are the results of an expert survey conducted by Sandro Speth \cite{Speth2019}, which indicate that industry experts also see this as a problem.
+Managing documentation and issues for multi-project, multi-team scenarios efficiently is a major problem for the software development process  \cite{mahmood2015identifying}. This assertion is supported by some posts in forums of Jira and Redmine asking for solutions to this problem\footnote{\url{https://www.redmine.org/boards/1/topics/21939}}\footnote{\url{https://community.atlassian.com/t5/Jira-questions/How-do-others-work-with-issues-affecting-multiple-projects/qaq-p/399950}}\footnote{\url{https://community.atlassian.com/t5/Jira-Software-questions/Share-one-issue-quot-ticket-quot-across-multiple-projects-and/qaq-p/407534}}. Another strong argument supporting it are the results of an expert survey conducted by Sandro Speth \cite{Speth2019}, which indicate that industry experts also see this as a problem.
 
 One possible approach to deal with this problem is introduced in \cite{Speth2019}.
 The proposed solution are so-called multi-project coding issues. These are issues concerning multiple projects and, therefore, are stored in the issue management system of each relevant project. Additionally, traceability links between multiple issues and artifacts are proposed. As a concrete syntax, a graphical notation for these issues and links is introduced and implemented in a prototype framework. The frontend of this framework is a web-based application with an architecture graph at its core.
@@ -67,7 +67,7 @@ which can then be sent to the server.
 An \gls{IDE} is a software tool for programming, which typically has a rich text editor at its core 
 and contains various other tools for use during software development.
 The concept of a dedicated software \gls{IDE} can be traced back to the Maestro I system, first called ``Programm-Entwicklungs-Terminal-System'' (program development terminal system), short PET, developed by Softlab Munich reported about in \cite{Computerwoche1975Ide}.
-Well known \glspl{IDE} today include Visual Studio\footnote{\url{https://visualstudio.microsoft.com}}, \gls{Eclipse}\footnote{\url{https://www.eclipse.org/ide/}}, NetBeans\footnote{\url{https://netbeans.org}}, and IntelliJ IDEA\footnote{\url{https://www.jetbrains.com/idea/}}.
+Well known \glspl{IDE} today include Visual Studio\footnote{\url{https://visualstudio.microsoft.com}}, \gls{Eclipse}\footnote{\url{https://www.eclipse.org/ide/}}, NetBeans\footnote{\url{https://netbeans.org}}, IntelliJ IDEA\footnote{\url{https://www.jetbrains.com/idea/}}, and Visual Studio Code\footnote{\url{https://code.visualstudio.com/}} .
 
 Various \glspl{IDE} follow the general trend to allow extending a piece of software with the help of plugins \cite{chang2008issues}.
 This enables developers to add custom features or integrated support for previously unsupported external tools.
@@ -117,7 +117,7 @@ First, results were rejected based on their title and the short excerpt Google S
 then based on the abstract.
 All remaining results were examined in depth to check whether they can be considered related work.
 Finally, the same process was repeated with all references to English papers of any work found, 
-which was classified as related work until no more such papers were identified.
+which was classified as related work until no more such papers were identified (Snowballing).
 
 The build the search terms all possible combinations of the following two parts were used.
 For part number one the following terms were used:
@@ -192,7 +192,7 @@ Additionally, theirs is for NetBeans, while ours is for \gls{Eclipse}.
 
 However, the most important difference between this thesis and the two covered related works
 is the fact that, in contrast to the other two, the tool presented in this thesis has support for the features of \gls{Gropius},
-which are intended to help with the issue management in multi-component, multi-team environments.
+which are intended to help with the issue management in component-based, multi-team environments.
 
 
 \subsection{Issue Management Plugins for Eclipse}
@@ -214,12 +214,12 @@ The next is ``JiraBuddy - Eclipse Plugin for JIRA''\footnote{\url{https://market
 is a plugin adding various enhancements when working with Atlassian Jira and \gls{Eclipse}, but does not provide the capability to create or update 
 issues from within \gls{Eclipse}. According to their website\footnote{\url{http://home.jirabuddy.com/}}, the only feature is to display the issue when hovering over the corresponding issue identifier in the \gls{Eclipse} editor.
 
-The last plugin of this kind is ``Atlassian Connector for Eclipse''\footnote{\url{https://marketplace.eclipse.org/content/atlassian-connector-eclipse}},
-which not only provides integration into Atlassian Jira, which is relevant for this thesis but also other Atlassian products like the Bamboo continues integration and deployment server.
+The last plugin of this kind is ``Atlassian Connector for Eclipse''\footnote{\url{https://marketplace.eclipse.org/content/atlassian-connector-eclipse}}.
+It not only provides integration into Atlassian Jira, which is relevant for this thesis, but also other Atlassian products like the Bamboo continues integration and deployment server.
 It is actually built on top of Mylyn, which is explained below.
 
 All of the above only work with one specific \gls{IMS}, whereas the tool proposed by this thesis can work with any \gls{IMS} supported by \gls{Gropius}.
-Additionally, the last two of them are not maintained anymore and therefore have no support for current eclipse versions. 
+Additionally, the last two of them are not maintained anymore and, therefore, have no support for current \gls{Eclipse} versions. 
 
 The fifth and most important plugin is Mylyn\footnote{\url{https://marketplace.eclipse.org/content/mylyn}} together with its many connectors for various \glspl{IMS}.
 It is one of the oldest issue management plugins for any \gls{IDE} \cite{janak2009issue}.
@@ -229,6 +229,6 @@ That mainly applies to the \gls{Eclipse} package explorer, where different resou
 Data about the relevancy of parts for the current task is extracted from the user's behavior.
 But in contrast to the solution provided in this thesis, Mylyn can only associate issues, or tasks as they are called in Mylyn, to resources as specific as source code files and not to lines within them.
 
-Similar to the academic work, all these plugins lack support for all or some features necessary in multi-component, multi-team environments,
+Similar to the academic work, all these plugins lack support for all or some features necessary in component-based, multi-team environments,
 like one issue being saved in multiple different \glspl{IMS} of multiple teams or the ability to quickly navigate between related issues.
 

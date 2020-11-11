@@ -4,17 +4,17 @@
 \label{chap:ch5}
 For evaluating the usefulness of the extension an expert review and survey are performed.
 To acquire the questions for this survey a process based on the \gls{GQM} approach introduced by Caldiera et al. \cite{caldiera1994goal} is used.
-The results from that are shown in \cref{sec:ch5:s1}.
+\Cref{sec:ch5:s1} covers that process and presents its results.
 \Cref{sec:ch5:s2} describes the design and realization as well as the results of the expert review and survey.
 In \cref{sec:ch5:s3} the results of the survey as well as the validity of the thesis are discussed.
-Finally, the identified threats to this validity are described in \cref{sec:ch5:s4}.
+Finally, the identified threats to the validity of this work are described in \cref{sec:ch5:s4}.
 
 \section{Applied \acrfull{GQM} approach}
 \label{sec:ch5:s1}
-The process described in this section does not exactly follow the original \gls{GQM} approach,
+The process described in this section does not exactly follow the original \acrfull{GQM} approach,
 but is based on it.
 The objective of the process is to find good questions, which can be used to evaluate the success of this thesis.
-Based on these questions the expert survey can then be performed.
+Based on these questions an expert survey can then be performed.
 
 The first step is to identify the goals of the work.
 For this thesis, the following could be identified as the primary and only goal \textbf{(G1)}:
@@ -28,7 +28,7 @@ For that purpose the following three questions could be identified:
 	\item[\textbf{Q3}] Can the industry imagine using such a tool in production?
 \end{itemize}
 
-As it was clear from the start, that an expert review and survey would be conducted, no metrics need to be found for these questions.
+As it was clear from the start, that an expert review and survey would be conducted, the metrics for these questions did not need to be determined.
 However, it must be investigated if an expert review is a reasonable metric for these questions.
 For \textbf{Q1} an expert survey is a reasonable metric if the experts are developers, who currently work are have worked in a field with multiple independent projects or have enough experience to put themselves into that situation.
 It is an adequate metric for \textbf{Q2} if the experts fulfill the conditions above and have used the thesis' tool or at least were given an introduction about the features of the tool.
@@ -49,7 +49,7 @@ The results from both are presented in \cref{ssec:ch5:ss2.2}.
 To perform an expert review and survey, first, a group of experts has to be found.
 To achieve this, various developers from academia and industry were contacted and asked to participate in this review.
 If they were generally interested, the thesis' concept and the procedure of the review and survey were explained to them.
-In total 21 experts were contacted, of which 12 agreed to take part.
+In total 21 experts were contacted, of which 14 agreed to take part.
 
 As preparation for the expert review, a detailed guide on installing \gls{GropiusEI} was produced
 to ensure experts could install it on their own device if they wanted.
@@ -57,7 +57,7 @@ It can be found in \cref{sec:appendix:er:install_guide} and
 the exact release used for the review is attached as \cref{sec:appendix:er:release}.
 
 Additionally, a scenario was created, in which experts could test the tool in as real as possible conditions.
-This scenario consists of an \gls{Eclipse} workspace with a java-based demo software using multiple components\footnote{\url{https://github.com/eventuate-tram/eventuate-tram-examples-customers-and-orders}} and a \gls{GropiusEI} data file.
+This scenario consists of an \gls{Eclipse} workspace with a \gls{java}-based demo software using multiple components\footnote{\url{https://github.com/eventuate-tram/eventuate-tram-examples-customers-and-orders}} and a \gls{GropiusEI} data file.
 This data file contains the correct components and interfaces for the workspace as well as some developers and labels in addition to
 several invented issues.
 These issues are as realistic as possible with a title that could be found in a live \gls{IMS} somewhere, a feasible text body,
@@ -69,7 +69,7 @@ The scenario can be found in \cref{sec:appendix:er:scenario} and a short explana
 
 After an expert agreed to participate they were provided with three options for executing the expert review and asked which they preferred.
 The first option was to install the tool and the scenario on their device with the help of the mentioned installation guide.
-Then an online meeting would be scheduled, such that the tasks from the scenario could be completed while I watch with the help of a screen sharing solution. That way I could help the experts with any problems and directly answer questions as well as guide them through the prepared tasks instead of sending the tasks.
+Then, an online meeting would be scheduled, such that the tasks from the scenario could be completed while I watch with the help of a screen sharing solution. That way, I could help the experts with any problems and directly answer questions as well as guide them through the prepared tasks instead of sending the tasks.
 The second option was, that the expert installs both on their device and goes through the scenario doing the tasks on their own.
 In this case, they were sent the tasks including the explanations in a written document.
 The last option was, that I would present the tool in an online meeting using screen sharing tools. 
@@ -82,12 +82,16 @@ After an expert completed the review he was sent the following questions and ask
 \begin{enumerate}
 	\item What do you see as the most significant problems when working with issues affecting multiple independent projects during your software development/engineering process? \label{itm:ch5:expert_questions_problems}
 	\item Do you think the following points represent problems or challenges of existing issue management systems you face as a developer? \label{itm:ch5:expert_questions_are_these_problems}
-	\subitem The lack of insufficient support of linking issues to multiple specific software development artifacts accurate to the line, especially if the artifacts are part of multiple independent projects.\label{itm:ch5:expert_questions_are_these_problems_1}
-	\subitem The lack of insufficient support of linking issues to each other \label{itm:ch5:expert_questions_are_these_problems_2}
-	\subitem The lack of inadequate support of navigating from one to the next issue through the chain of related or dependent issues. \label{itm:ch5:expert_questions_are_these_problems_3}
+	\begin{itemize}
+		\item The lack of insufficient support of linking issues to multiple specific software development artifacts accurate to the line, especially if the artifacts are part of multiple independent projects.\label{itm:ch5:expert_questions_are_these_problems_1}
+		\item The lack of insufficient support of linking issues to each other \label{itm:ch5:expert_questions_are_these_problems_2}
+		\item The lack of inadequate support of navigating from one to the next issue through the chain of related or dependent issues. \label{itm:ch5:expert_questions_are_these_problems_3}
+	\end{itemize}
 	\item For which of these problems (from points 1 and 2) would you say Gropius EI completely solves them? \label{itm:ch5:expert_questions_solve}
 	\item For which of these problems (from points 1 and 2) would you say Gropius EI reduces them? \label{itm:ch5:expert_questions_reduce}
-	\subitem How far would you say are each of these problems reduced?
+	\begin{itemize}
+		\item How far would you say are each of these problems reduced?
+	\end{itemize}
 	\item Could you imagine to use Gropius EI in your day-to-day business?
 \end{enumerate}
 These questions are based on the evaluation questions \textbf{Q1} to \textbf{Q3} presented in \cref{sec:ch5:s1}.
@@ -190,7 +194,7 @@ In his eyes, both of these points are solved by \gls{GropiusEI}.
 \label{sec:ch5:s3}
 In this section the validity of the concept and the success of this thesis is discussed based on the \gls{GQM} plan introduced in \cref{sec:ch5:s1} and the results of the expert survey presented in \cref{ssec:ch5:ss2.2}.
 For that, three hypotheses based on the research questions \textbf{Q1} to \textbf{Q3} presented in \cref{sec:ch5:s1} are established. 
-Then their validity is discussed based on the results of the expert review.
+Then, their validity is discussed based on the results of the expert review.
 Finally, if none of the hypotheses is rejected, the goal \textbf{G1} has been reached.
 
 The following three hypotheses, one for each research question, were created:
@@ -205,7 +209,7 @@ Additionally, almost half of the experts see the first point of question \ref{it
 Another does not exactly have that problem, but a related one.
 Furthermore, the other two points provided for question \ref{itm:ch5:expert_questions_are_these_problems}  are seen as important features by the experts, even though most think their support of existing \glspl{IMS} is good enough.
 However, these points are also seen as problems by three and two experts respectively.
-In total it can be said, that there are at least some problems for developers when working with such issues.
+In total, it can be said, that there are at least some problems for developers when working with such issues.
 Therefore, \emph{hypothesis \textbf{H1} is accepted}.
 
 According to most experts, \gls{GropiusEI} solves at least some of these problems.
@@ -260,21 +264,21 @@ All three hypotheses have been accepted. Therefore it can be said, that the goal
 		my tree style
 		[Threats to Validity
 		[External Validity
-		[\begin{varwidth}{0.16\linewidth}Small sample size\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Sample not representative\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Small sample size\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Sample not\\ representative\end{varwidth}]
 		]
 		[Construct Validity 
 		[[[
-		[\begin{varwidth}{0.16\linewidth}Questions for experts misrepresent research questions\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Questions misunderstood by experts\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Answers misinterpreted\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Only one kind of measurement\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Expert survey is not objective nor statistical\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Questions for experts misrepresent research questions\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Questions\\ misunderstood by experts\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Answers\\ misinterpreted\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Only one kind of measurement\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Expert survey is not objective nor statistical\end{varwidth}]
 		]]]
 		]
 		[Reliability
-		[\begin{varwidth}{0.16\linewidth}Documents written in German\end{varwidth}]
-		[\begin{varwidth}{0.16\linewidth}Artifacts hosted online may not be available forever\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Documents\\ written in German\end{varwidth}]
+		[\begin{varwidth}{0.165\linewidth}Artifacts hosted online may not be available forever\end{varwidth}]
 		]
 		%[Internal Validity]
 		]
@@ -285,7 +289,7 @@ All three hypotheses have been accepted. Therefore it can be said, that the goal
 \end{figure}
 
 This section discusses which threats to the validity of the results discussed above could be identified.
-An overview of these threats can be seen in ...
+An overview of these threats can be seen in \cref{fig:threatsToValididty}.
 The threats can be grouped into four categories \cite{runeson2009guidelines}.
 
 The first category investigated, is internal validity.
@@ -301,14 +305,14 @@ introduced in \cref{sec:ch5:s1}.
 Next, these questions could have been misunderstood by one or more experts.
 Furthermore, the answers of the experts could have been misinterpreted.
 Moreover, just a single kind of measurement was performed.
-Finally, an expert survey does not produce objective ore statistical results.
+Finally, an expert survey does not produce objective or statistical results.
 The results are subjective answers from the experts given in free text form, such that statistical evaluation is difficult. 
 
 Another aspect is the external validity.
 That is concerned with whether the results can be generalized beyond the small studied sample \cite{runeson2009guidelines}.
 The following threats were identified for this category:
 First, the sample size was very small compared to all developers working with issues in a relevant field.
-Second, the experts were not picked randomly, but all had prior contact with me or my supervisor.
+Second, the experts were not picked randomly, but all had prior contact with me or my supervisors.
 Therefore, the sample was not very representative of the complete population.
 
 The last aspect of validity is reproducibility or reliability.
