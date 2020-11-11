@@ -9,8 +9,8 @@ which integrates into the  \gls{Gropius} framework.
 This tool is then used in the evaluation by presenting to experts in the field for a review.
 
 The first step was to gather requirements for that prototype. 
-This requirements engineering process as well as its results are described in \cref{sec:ch3:s1}.
-Visualizing details about an issue in the corresponding icon is a key part of multiple requirements.
+This requirements engineering process, as well as its results, are described in \cref{sec:ch3:s1}.
+Visualizing details about an issue in the corresponding icon is a crucial part of multiple requirements.
 Therefore, the next step was to determine which properties to visualize and how.
 The resulting concept for the icons is explained in \cref{sec:ch3:s2}.
 Finally, as described in \cref{sec:ch3:s3}, 
@@ -19,7 +19,7 @@ a rough concept for the extension was made before continuing with the design and
 \section{Analysis and Requirements Engineering}
 \label{sec:ch3:s1}
 The goal of requirements engineering is to gather, document, validate and manage requirements for a computer-based system \cite{sommerville1997requirements}. 
-To gather requirements for the extension, a process with six steps as shown in \cref{fig:requirmentsProcess} was used.
+To gather requirements for the extension, a process with six steps, as shown in \cref{fig:requirmentsProcess}, was used.
 This process is split into two stages, each with the three activities of requirements elicitation, specification, and validation.
 
 \begin{figure}[!h]
@@ -99,10 +99,10 @@ Additionally, the discussion and feedback after the thesis proposal presentation
 
 Then, the second stage of requirements elicitation was performed using the requirements from the first elicitation, 
 the results from the validation as well as the results of a stakeholder interview.
-For this interview, the general concept of Gropius as well as of this thesis was sent to representatives of each group of stakeholders. 
+For this interview, the general concepts of Gropius and the idea of this thesis was sent to representatives of each group of stakeholders. 
 They were then asked for their requirements with the help of two questions.
 The first question asked for features expected from an issue management plugin in general,
-the second for those, which the representatives would expect from such a plugin, which integrates into \gls{Gropius}.
+the second for those which the representatives would expect from such a plugin, which integrates into \gls{Gropius}.
 
 Since the prototype is a new tool for a system under development, only three groups of stakeholders could be identified:
 First, the potential users, in this case, developers, working with component-based systems, such as microservices.
@@ -133,7 +133,7 @@ As a developer, I want to ...
 	\item ... be able to see all details for a specific issue.
 	\item ... be able to jump to a related issue from my currently viewed issue.
 	\item ... be able to quickly open a relevant source file at the relevant line for an issue, even if it is in another eclipse project (as long as that project is in my workspace).
-	\item ... be shown which lines of a source file are relevant for an issue. (For example through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
+	\item ... be shown which lines of a source file are relevant for an issue. (For example, through markers at the side of the editor) \label{itm:ch3:req:source_file_marker}
 	\item ... be able to edit every property of an issue that I have write access to.
 	\item ... be able to create a new issue.
 	\item ... be able to create a new issue for some lines of code without manually entering the source file and lines in a dialog.
@@ -148,7 +148,7 @@ As a developer, I want ...
 	\item ... the system architecture graph in my web browser to highlight the issue I've selected in eclipse.
 	\item ... to be able to open details about an issue in the eclipse view through the architecture graph in my web browser.
 	\item ... to be able to open a relevant source code line of an issue in eclipse from the architecture graph in my web browser.
-	\item ... to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example in meetings.
+	\item ... to be able to have the possibility to set the focus of the architecture graph and eclipse editor as well as the issue view of my colleagues, for example, in meetings.
 \end{enumerate}
 
 \section{Concept for the Issue Icons}
@@ -162,14 +162,14 @@ As described in \cref{ssec:ch2:ss1.1} an issue can represent various concepts.
 The type of issue can be used to roughly specify which of these concepts is represented by an issue.
 Common values are bug and enhancement.
 
-Another interesting concept, that could be visualized in the icons, is the idea that one issue can be the cause of another.
-For example, a Null-Pointer in one component could cause an illegal response in an \gls{API}, which could cause a crash in another component.
+Another interesting concept that could be visualized in the icons is the idea that one issue can be the cause of another.
+For example, a Null-Pointer in one component could cause an illegal response in an \gls{API}, causing a crash in another component.
 Then the Null-Pointer is the root cause.
 The illegal response is a symptom of that but also the cause of the crash.
-The crash is just a symptom of the illegal response and can probably not be completely fixed without fixing the other two.
+The crash is just a symptom of the illegal response and can probably not be fixed entirely without fixing the other two.
 
-Other interesting properties include, to whom the issue is assigned and the state of the issue.
-It could be interesting to immediately recognize the issues assigned to yourself.
+Other interesting properties include to whom the issue is assigned and the state of the issue.
+It could be interesting to recognize the issues assigned to yourself immediately.
 With the state of the issue, a developer can directly see if the issue still exists and if work is required.
 
 As it was not clear how much information could be visualized in one small icon, 
@@ -184,22 +184,21 @@ The following properties were chosen to be visualized with decreasing priority.
 	\item Is the issue assigned to the viewing developer?
 	\item Is the issue new or work in progress or done?
 \end{itemize}
-Finally, another aspect, that could be visualized is the visibility of the issue as some \glspl{IMS} can have issues that are only visible internally.
-However, it was decided against it for now, as it didn't seem that important of a property and the Gropius system currently doesn't support it anyway.
+Finally, another aspect that could be visualized is the visibility of the issue as some \glspl{IMS} can have issues that are only visible internally.
+However, it was decided against it for now, as it did not seem that important of a property, and the Gropius system currently does not support it.
 
 \section{Concept for the \gls{IDE} Extension}
 \label{sec:ch3:s3}
-Before starting with the detailed design and implementation of the prototype tool, a rough concept for it needed to be created.
-Most parts of this were already done during the thesis' proposal process and a version of this concept was included in the proposal paper.
-Therefore, the feedback for the paper and the presentation in front of the department was a confirmation, that the general concept is reasonable.
+Before starting with the detailed design and implementation of the prototype tool, a rough concept needed to be created.
+Most parts of this were already done during the thesis' proposal process, and a version of this concept was included in the proposal paper.
+Therefore, the paper's feedback and the presentation in front of the department confirmed that the general concept is reasonable.
 
 According to the concept, the plugin consists of two main \gls{UI} elements: The issue list and the issue details element.
 These are complemented by various dialogs and other features described below.
 The plugin uses the \gls{API} of the \gls{Gropius} system to retrieve the required data and perform any modifications on it.
 Furthermore, the plugin is split into multiple components, 
-of which only one is specific to the supported \gls{IDE} 
-and the others are reusable for other \glspl{IDE} with minimal changes.
-That way the amount of work to port it for another \gls{IDE} is minimized,
+of which only one is specific to the supported \gls{IDE}, while the others are reusable for other \glspl{IDE} with minimal changes.
+That way, the amount of work to port it for another \gls{IDE} is minimized,
 as long as it supports \gls{java}-based plugins.
 
 \begin{figure}[!h]
@@ -270,7 +269,7 @@ Finally, the tool is connected to the existing web \gls{UI} with the help of a m
 That way it is possible to enable synchronization between the plugin and the web user interface, 
 such that selecting an issue in one will cause the other to also jump to the same issue and select it accordingly. 
 Each user has a separate topic in the messaging component, preventing undesirable interaction between multiple users. 
-In addition to this, special topics for example for meetings are a possibility, 
+In addition to this, special topics, for example, for meetings are a possibility, 
 such that one developer can select an issue and the same is selected for all other participants of the meeting. 
 \cref{fig:c3:concept_gropius_messaging} shows the basic architecture planned for this feature. 
 The plugin, as well as the web user interface, communicate with the back-end through the \gls{graphql} \gls{API} and with each other using a messaging component.

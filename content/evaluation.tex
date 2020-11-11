@@ -2,11 +2,11 @@
 
 \chapter{Evaluation}
 \label{chap:ch5}
-For evaluating the usefulness of the extension an expert review and survey are performed.
-To acquire the questions for this survey a process based on the \gls{GQM} approach introduced by Caldiera et al. \cite{caldiera1994goal} is used.
+For evaluating the usefulness of the extension, an expert review and survey are performed.
+To acquire the questions for this survey, a process based on the \gls{GQM} approach introduced by Caldiera et al. \cite{caldiera1994goal} is used.
 \Cref{sec:ch5:s1} covers that process and presents its results.
 \Cref{sec:ch5:s2} describes the design and realization as well as the results of the expert review and survey.
-In \cref{sec:ch5:s3} the results of the survey as well as the validity of the thesis are discussed.
+In \cref{sec:ch5:s3}, the results of the survey, as well as the validity of the thesis, are discussed.
 Finally, the identified threats to the validity of this work are described in \cref{sec:ch5:s4}.
 
 \section{Applied \acrfull{GQM} approach}
@@ -14,23 +14,23 @@ Finally, the identified threats to the validity of this work are described in \c
 The process described in this section does not exactly follow the original \acrfull{GQM} approach,
 but is based on it.
 The objective of the process is to find good questions, which can be used to evaluate the success of this thesis.
-Based on these questions an expert survey can then be performed.
+Based on these questions, an expert survey can then be performed.
 
 The first step is to identify the goals of the work.
 For this thesis, the following could be identified as the primary and only goal \textbf{(G1)}:
 Improve the efficiency, effectiveness, and convenience for developers when working with issues in environments with many components and multiple teams during their software development process. 
 
-Next, questions have to be found, which can be used to evaluate, whether that goal is reached.
-For that purpose the following three questions could be identified:
+Next, questions have to be found, which can be used to evaluate whether that goal is reached.
+For that purpose, the following three questions could be identified:
 \begin{itemize}
 	\item[\textbf{Q1}] What problems do developers face when working with issues affecting multiple independent projects during the software development/engineering process?
 	\item[\textbf{Q2}] Which of these problems does this thesis's tool solve and to which degree?
 	\item[\textbf{Q3}] Can the industry imagine using such a tool in production?
 \end{itemize}
 
-As it was clear from the start, that an expert review and survey would be conducted, the metrics for these questions did not need to be determined.
+As it was clear from the start that an expert review and survey would be conducted, the metrics for these questions did not need to be determined.
 However, it must be investigated if an expert review is a reasonable metric for these questions.
-For \textbf{Q1} an expert survey is a reasonable metric if the experts are developers, who currently work are have worked in a field with multiple independent projects or have enough experience to put themselves into that situation.
+For \textbf{Q1}, an expert survey is a reasonable metric if the experts are developers who currently work are have worked in a field with multiple independent projects or have enough experience to put themselves into that situation.
 It is an adequate metric for \textbf{Q2} if the experts fulfill the conditions above and have used the thesis' tool or at least were given an introduction about the features of the tool.
 An expert survey is a reasonable metric for \textbf{Q3} if the experts are or have been working in the industry and fulfill the above conditions.
 
@@ -48,34 +48,34 @@ The results from both are presented in \cref{ssec:ch5:ss2.2}.
 \label{ssec:ch5:ss2.1}
 To perform an expert review and survey, first, a group of experts has to be found.
 To achieve this, various developers from academia and industry were contacted and asked to participate in this review.
-If they were generally interested, the thesis' concept and the procedure of the review and survey were explained to them.
-In total 21 experts were contacted, of which 14 agreed to take part.
+If they were generally interested, the thesis' concept and the review and survey procedure were explained to them.
+In total, 24 experts were contacted, of which 14 agreed to take part.
 
 As preparation for the expert review, a detailed guide on installing \gls{GropiusEI} was produced
 to ensure experts could install it on their own device if they wanted.
 It can be found in \cref{sec:appendix:er:install_guide} and
 the exact release used for the review is attached as \cref{sec:appendix:er:release}.
 
-Additionally, a scenario was created, in which experts could test the tool in as real as possible conditions.
+Additionally, a scenario was created in which experts could test the tool in as real as possible conditions.
 This scenario consists of an \gls{Eclipse} workspace with a \gls{java}-based demo software using multiple components\footnote{\url{https://github.com/eventuate-tram/eventuate-tram-examples-customers-and-orders}} and a \gls{GropiusEI} data file.
 This data file contains the correct components and interfaces for the workspace as well as some developers and labels in addition to
 several invented issues.
 These issues are as realistic as possible with a title that could be found in a live \gls{IMS} somewhere, a feasible text body,
 typical labels, sometimes linked issues, and most with at least one location in the workspace.
 Furthermore, a few tasks were prepared, which were used to introduce each feature to the expert.
-These tasks were typical things a developer would need to do during his workday like finding an issue in the code or creating a new issue.
+These tasks were typical things a developer would need to do during his workday, like finding an issue in the code or creating a new issue.
 For each task, a detailed explanation, how the task can be done using \gls{GropiusEI} is also included. 
 The scenario can be found in \cref{sec:appendix:er:scenario} and a short explanation as well as the mentioned tasks in \cref{sec:appendix:er:scenario_explanation}.
 
-After an expert agreed to participate they were provided with three options for executing the expert review and asked which they preferred.
+After an expert agreed to participate, they were provided with three options for executing the expert review and asked which they preferred.
 The first option was to install the tool and the scenario on their device with the help of the mentioned installation guide.
 Then, an online meeting would be scheduled, such that the tasks from the scenario could be completed while I watch with the help of a screen sharing solution. That way, I could help the experts with any problems and directly answer questions as well as guide them through the prepared tasks instead of sending the tasks.
-The second option was, that the expert installs both on their device and goes through the scenario doing the tasks on their own.
-In this case, they were sent the tasks including the explanations in a written document.
-The last option was, that I would present the tool in an online meeting using screen sharing tools. 
+The second option was that the expert installs both on their device and goes through the scenario doing the tasks independently.
+In this case, they were sent the tasks, including the explanations in a written document.
+The last option was that I would present the tool in an online meeting using screen sharing tools. 
 That way the expert did not need to install anything on their device. 
 For that reason, this was also the fastest option. 
-On the other hand, the experts could not use the tool themselves, but just watch me perform the tasks.
+On the other hand, the experts could not use the tool themselves but just watch me perform the tasks.
 In every case, the expert was asked for general feedback.
 
 After an expert completed the review he was sent the following questions and asked to answer them:
@@ -100,94 +100,94 @@ The points for question \ref{itm:ch5:expert_questions_are_these_problems} were c
 
 \subsection{Results}
 \label{ssec:ch5:ss2.2}
-Of the twelve experts, who agreed to participate, eight actually took part in the review and survey,
-however, only seven could send me their answers in time.
+Of the twelve experts, who agreed to participate, eight actually took part in the review and survey.
+However, only seven could send me their answers in time.
 All of these experts are software developers.
 One works in academia and the others in the industry.
 The industry experts work in various different companies from small businesses with just a few employees to well known global corporations,
 from IT consultancies to companies, where software is just a small part of the final product.
 Furthermore, the experts have very different levels of experience.
-One is working as an intern during his masters' studies, others have been developers for a few years and some are senior software engineers, who have been working in the industry for decades.
+One is working as an intern during his masters' studies, others have been developers for a few years, and some are senior software engineers who have been working in the industry for decades.
 
 Six of the seven experts appreciate the general concept.
 They also see potential in the extension but would like a few more features.
-In the following paragraphs, the general and technical feedback for the extension is summarized followed by the results of the expert survey.
+In the following paragraphs, the general and technical feedback for the extension is summarized, followed by the results of the expert survey.
 
-While reviewing the implemented extension many experts missed features that were planned but could not be implemented because of the time.
+While reviewing the implemented extension, many experts missed features that were planned but could not be implemented because of the time.
 Two experts also noticed some minor bugs with the issue list, like it freezing under some circumstances when changing the displayed columns.
 The most requested feature was the ability to filter the issue list by more criteria, especially the ability to search by text contained in the title or description.
-Another feature, that was requested multiple times was the ability to create locations and issues from the source code editor.
+Another feature that was requested multiple times was the ability to create locations and issues from the source code editor.
 Additionally, multiple experts stated, they would like to be able to navigate from a marker in the code to the corresponding issue in the issue list.
 Furthermore, the ability to group issues in the issue list by various properties was requested by some experts.
 One expert also requested the ability to specify the kind of a relation between two issues.
-Moreover, another expert would like some kind of key for the icons and would prefer if the state of the issue was only visualized by one aspect, preferably the color and not the small black overlay. He also stated that an arrow pointing up may be easier to identify as an enhancement than the light bulb.
+Moreover, another expert would like some kind of key for the icons and would prefer if the state of the issue was only visualized by one aspect, preferably the color and not the small black overlay. He also stated that an arrow pointing up might be easier to identify as an enhancement than the light bulb.
 One expert would like the ability to link issues to other kinds of software development artifacts such as \gls{PDF} documents.
-He also stated, that \gls{GropiusEI} is missing any kind of anonymization, which is typically required for cross-company collaboration.
+He also stated that \gls{GropiusEI} is missing any kind of anonymization, which is typically required for cross-company collaboration.
 Additionally, he would expect drag-and-drop capabilities.
 Moreover, he would prefer if the interface for adding assignees and labels would be more similar to the one of existing \glspl{IMS} like Github.
 Another expert suggested also showing the markers in the \gls{Eclipse} problems view and as annotations on the files, folders, and projects in the \gls{Eclipse} package explorer.
 Furthermore, he would like the issue list and issue details \gls{UI} element to be separate views, so they can separately be moved within the \gls{Eclipse} window, making it easier to find an optimal layout.
 He would also prefer the default filter for the issue list to only show open issues.
-Moreover, two experts stated, that they would like to be able to sort the list of labels for each issue in the issue list, such that, for example, the work-in-progress label is always the first one displayed.
+Moreover, two experts stated that they would like to be able to sort the list of labels for each issue in the issue list, such that, for example, the work-in-progress label is always the first one displayed.
 Finally, one expert thinks that the issue locations would rarely be used in practice as it is too much extra work and most developers dislike managing such additional data.
 
 The existing features the experts liked the most were the ability to quickly navigate between issues and to the code as well as the markers in the editor.
-One also stated he likes the way the existing save button of \gls{Eclipse} is used to save the data of the issue list.
-Another especially liked the icons, because they allow him to quickly get an overview of the issues and some of their properties without being overloaded.
-He also liked, that there are not too many types of issues.
+One also stated he likes how the existing save button of \gls{Eclipse} is used to save the data of the issue list.
+Another especially liked the icons because they allow him to quickly get an overview of the issues and some of their properties without being overloaded.
+He also liked that there are not too many types of issues.
 
 The experts' answers to question \ref{itm:ch5:expert_questions_problems} were rather diverse.
-One expert doesn't see any problems with existing tools when it comes to working with issues affecting multiple independent projects.
-The next expert stated, that the most significant problem is tracking issues, that depend on each other, across multiple projects.
-In the mind of another expert, the proper description of the issues and a good specification of the issue location are the core problems.
+One expert does not see any problems with existing tools when it comes to working with issues affecting multiple independent projects.
+The next expert stated that the most significant problem is tracking issues that depend on each other across multiple projects.
+In the mind of another expert, the accurate description of the issues and a good specification of the issue location are the core problems.
 Similar to that, the fourth expert thinks that the lack of support for specifying the issue location other than as part of the description or a comment is a major problem.
 He also stated that he often misses the ability to specify the kind of a relation between two issues or not enough different types of relations are provided.
 On the other hand, he thinks that most \glspl{IMS} have too many different types of issues, which causes confusion and allows too much room for interpretation.
-Another expert stated, that the most significant problem is, that some, especially closed-source, projects don't have a public \gls{IMS} and some open-source projects are managing their projects in a custom \gls{IMS} instead of a well-known one like the Github issue tracker.
-One expert also sees the problem, that developers need to keep the overview of the components, to know in which \gls{IMS} they need to create or search an issue.
-He also thinks, that it is a problem when one issue affects multiple components from the customers' perspective.
-Another expert stated, the biggest problem for him is managing dependencies, when a fix for an issue might break compatibility and therefore the new version of multiple components need to be deployed simultaneously. 
+Another expert stated that the most significant problem is that some, especially closed-source, projects do not have a public \gls{IMS}, and some open-source projects are managing their projects in a custom \gls{IMS} instead of a well-known one like the Github issue tracker.
+One expert also sees the problem, that developers need to keep the overview of the components to know in which \gls{IMS} they need to create or search an issue.
+He also thinks that it is a problem when one issue affects multiple components from the customers' perspective.
+Another expert stated, the biggest problem for him is managing dependencies when a fix for an issue might break compatibility and the new version of multiple components, therefore, need to be deployed simultaneously. 
 
 Three experts completely agree with \hyperref[itm:ch5:expert_questions_are_these_problems_1]{first point} of question \ref{itm:ch5:expert_questions_are_these_problems}.
-Two experts think it would be a nice feature, but don't see the lack of it as a problem.
-The expert, who doesn't see any problem with existing \gls{IMS} when working with issues affecting multiple independent projects, states that the real problem is visualizing this link in his \gls{IDE}.
-One expert stated, that existing \gls{IMS} mostly support this well enough for his needs.
-He and one of the experts only considering this a nice feature also stated, that for most issues a concrete location can not be determined, reducing the need for this feature.
+Two experts think it would be a nice feature, but do not see its lack as a problem.
+The expert, who does not see any problem with existing \gls{IMS} when working with issues affecting multiple independent projects, states that the real problem is visualizing this link in his \gls{IDE}.
+One expert stated that existing \gls{IMS} mostly support this well enough for his needs.
+He and one of the experts only considering this a nice feature also stated that a concrete location cannot be determined for most issues, reducing the need for this feature.
 
 Four experts stated, that the feature mentioned in the \hyperref[itm:ch5:expert_questions_are_these_problems_2]{second point} is very important,
 but that most \glspl{IMS} have adequate support of it.
-Two experts agrees, that this is a problem with existing \glspl{IMS}.
+Two experts agree that this is a problem with existing \glspl{IMS}.
 One of them also stated, it should be as easy as possible to create such a link.
-Another expert states, that sometimes the support of this feature is inadequate, especially when working with independent projects.
+Another expert states that sometimes the support of this feature is inadequate, especially when working with independent projects.
 
 Similar to the previous point, all experts agree that \hyperref[itm:ch5:expert_questions_are_these_problems_3]{third feature} is important, 
 but four of them think the support of it is good enough in existing \gls{IMS}.
 One thinks that very few \glspl{IMS} have adequate support for this.
-Two experts also stated a graphical overview of the linked issues would be nice.
-The expert, who wants the ability to specify the kind of relation also mentioned, that only having one type of relation is bad for the navigability between issues as it makes the list of related issues long and confusing.
-One expert also states navigating between issues is not a problem, when they are properly linked, but initially finding the \gls{IMS} of another project can be a problem when only the name or identifier of the related issue is given.
+Two experts also stated that a graphical overview of the linked issues would be nice.
+The expert, who wants the ability to specify the kind of relation, also mentioned that only having one type of relation is bad for the navigability between issues. It makes the list of related issues long and confusing.
+One expert also states navigating between issues is not a problem when they are properly linked but initially finding the \gls{IMS} of another project can be a problem when only the name or identifier of the related issue is given.
 
 Most experts answered question \ref{itm:ch5:expert_questions_solve} and question \ref{itm:ch5:expert_questions_reduce} together, 
 therefore the answers are also summarized in this paragraph.
 As the first expert didn't see any problems in response to questions \ref{itm:ch5:expert_questions_problems} and \ref{itm:ch5:expert_questions_are_these_problems}, \gls{GropiusEI} does not solve or reduce any problems in his eyes.
 Another expert stated, that the problems he sees, which are the missing public \gls{IMS}, custom \gls{IMS} are not solved by \gls{GropiusEI} but all the points of question \ref{itm:ch5:expert_questions_are_these_problems} are reduced by \gls{GropiusEI}, even though other \glspl{IMS} also do that.
 One expert stated, that he thinks \gls{GropiusEI} solves all of the problems from question \ref{itm:ch5:expert_questions_are_these_problems}.
-According to another expert, the concept reduces these problems as well as the need of keeping an overview of the components and their respective \gls{IMS} but the implementation still needs some work.
+According to another expert, the concept reduces these problems and the need to keep an overview of the components and their respective \gls{IMS}, but the implementation still needs some work.
 The other three experts think \gls{GropiusEI} solves the problem of linking issues to artifacts of multiple projects.
 One of them also stated that the problem of linking issues is solved by \gls{GropiusEI} in his eyes.
-Another expert also states, that navigating between issues is easy with \gls{GropiusEI}, but the links should have more than one type for an even better overview.
+Another expert also states that navigating between issues is easy with \gls{GropiusEI}, but the links should have more than one type for an even better overview.
 
 Only one expert can not imagine using \gls{GropiusEI} at all.
 The other experts would not use it right now, as it lacks many features, especially the ability to synchronize data with the \gls{Gropius} back-end,
 but could imagine using it in the future, once these issues have been resolved.
-One expert would only use it, once it is available for IntelliJ IDEA or Visual Studio Code.
+One expert would only use it once it is available for IntelliJ IDEA or Visual Studio Code.
 Another point is also the support of \gls{Gropius} for various \gls{IMS}.
-One expert would, for example, only use \gls{GropiusEI}, if it has support for Jira.
+One expert would, for example, only use \gls{GropiusEI} if it has support for Jira.
 
-Finally, the expert who didn't see any problems with existing \gls{IMS} when working with issues affecting multiple independent projects, stated he has other problems with them, which are solved by \gls{GropiusEI}.
-As all major \glspl{IMS} are web-based source code is also opened in the browser, whenever they link to it.
-However, in the browser various \gls{IDE} features for exploring or editing the code are not available.
-Furthermore, he thinks, that with existing \glspl{IMS} the effort for creating a new issue while working in the code is larger than required.
+Finally, the expert who did not see any problems with existing \gls{IMS} when working with issues affecting multiple independent projects stated he has other problems with them, which are solved by \gls{GropiusEI}.
+As all major \glspl{IMS} are web-based, source code is also opened in the browser whenever they link to it.
+However, in the browser, various \gls{IDE} features for exploring or editing the code are not available.
+Furthermore, he thinks that with existing \glspl{IMS}, the effort for creating a new issue while working in the code is larger than required.
 In his eyes, both of these points are solved by \gls{GropiusEI}.
 
 \section{Discussion}
@@ -204,28 +204,28 @@ The following three hypotheses, one for each research question, were created:
 	\item[\textbf{H3}] The industry can imagine using such a tool in production.
 \end{itemize}
 
-As shown by their answers to \ref{itm:ch5:expert_questions_problems} the experts found various problems, which occur when working with issues affecting multiple independent projects.
-Additionally, almost half of the experts see the first point of question \ref{itm:ch5:expert_questions_are_these_problems} as a problem and two more think it would be a nice feature.
+As shown by their answers to \ref{itm:ch5:expert_questions_problems}, the experts found various problems, which occur when working with issues affecting multiple independent projects.
+Additionally, almost half of the experts see the first point of question \ref{itm:ch5:expert_questions_are_these_problems} as a problem, and two more think it would be a nice feature.
 Another does not exactly have that problem, but a related one.
-Furthermore, the other two points provided for question \ref{itm:ch5:expert_questions_are_these_problems}  are seen as important features by the experts, even though most think their support of existing \glspl{IMS} is good enough.
-However, these points are also seen as problems by three and two experts respectively.
-In total, it can be said, that there are at least some problems for developers when working with such issues.
+Furthermore, the other two points provided for question \ref{itm:ch5:expert_questions_are_these_problems}  are seen as essential features by the experts, even though most think their support of existing \glspl{IMS} is good enough.
+However, these points are also seen as problems by three and two experts, respectively.
+In total, it can be said that there are at least some problems for developers when working with such issues.
 Therefore, \emph{hypothesis \textbf{H1} is accepted}.
 
 According to most experts, \gls{GropiusEI} solves at least some of these problems.
 Additionally, all but one expert think it at least reduces these problems.
-Furthermore, this one expert stated, that \gls{GropiusEI} solves other problems he has with existing \gls{IMS}.
+Furthermore, this one expert stated that \gls{GropiusEI} solves other problems he has with existing \gls{IMS}.
 Therefore, it can be said it also improves the efficiency, effectiveness, or convenience for him when working with issues,
 even though the problems are not specific to issues affecting independent projects.
 Consequently, all experts think there is some benefit of using \gls{GropiusEI}.
-Even though not all of the problems are solved equally well it can be said, the problems all together are solved to a significant degree.
+Even though not all of the problems are solved equally well, it can be said, the problems all together are solved to a significant degree.
 Therefore, \emph{hypothesis \textbf{H2} is accepted}, too.
 
-Finally, all but one expert could see themselves using \gls{GropiusEI} in their daily business once the implementation of it has advanced enough.
+Finally, all but one expert could see themselves using \gls{GropiusEI} in their daily business once its implementation has advanced enough.
 This clearly indicates that the industry can imagine using it in production.
 Therefore, \emph{hypothesis \textbf{H3} is accepted}, too.
 
-All three hypotheses have been accepted. Therefore it can be said, that the goal of this thesis, as defined by \textbf{G1} in \cref{sec:ch5:s1} has been reached.
+All three hypotheses have been accepted. Therefore it can be said that this thesis's goal, as defined by \textbf{G1} in \cref{sec:ch5:s1}, has been reached.
 
 \section{Threats to Validity}
 \label{sec:ch5:s4}
@@ -292,13 +292,13 @@ This section discusses which threats to the validity of the results discussed ab
 An overview of these threats can be seen in \cref{fig:threatsToValididty}.
 The threats can be grouped into four categories \cite{runeson2009guidelines}.
 
-The first category investigated, is internal validity.
+The first category investigated is internal validity.
 This aspect of validity is concerned with whether the observed results are actually caused by the changes introduced by this work,
 or if the results could be the effects of any unknown influence \cite{runeson2009guidelines}.
-But as the experts were directly asked if \gls{GropiusEI} solves or reduces the stated problems, no threat to this aspect of validity could be identified.
+However, as the experts were directly asked if \gls{GropiusEI} solves or reduces the stated problems, no threat to this aspect of validity could be identified.
 
 The next kind is construct validity.
-It represents the correctness of the assumption, that the collected results actually correspond to the research questions \cite{runeson2009guidelines}.
+It represents the correctness of the assumption that the collected results actually correspond to the research questions \cite{runeson2009guidelines}.
 For this aspect, a few threats could be identified.
 First, the questions sent to the experts, which are presented in \cref{ssec:ch5:ss2.1} could misrepresent the research questions 
 introduced in \cref{sec:ch5:s1}.
@@ -311,12 +311,12 @@ The results are subjective answers from the experts given in free text form, suc
 Another aspect is the external validity.
 That is concerned with whether the results can be generalized beyond the small studied sample \cite{runeson2009guidelines}.
 The following threats were identified for this category:
-First, the sample size was very small compared to all developers working with issues in a relevant field.
+First, the sample size was small compared to all developers working with issues in a relevant field.
 Second, the experts were not picked randomly, but all had prior contact with me or my supervisors.
-Therefore, the sample was not very representative of the complete population.
+Therefore, the sample was not very representative of the entire population.
 
 The last aspect of validity is reproducibility or reliability.
 It deals with any reasons a separate evaluation by other researchers reproducing this work would not have the same conditions \cite{runeson2009guidelines}.
 For this aspect, no major threats could be identified, as the whole process is described in detail in \cref{ssec:ch5:ss2.1}, and all artifacts used can be found in \cref{chap:appendix:expert_review_docs}.
-The first minor threat found, is the fact that these documents are written in German and would need to be translated for researchers or experts who don't speak German.
+The first minor threat found is that these documents are written in German and would need to be translated for researchers or experts who do not speak German.
 The other minor threat is that the artifacts hosted on the internet referenced in the appendix might not be available forever.
