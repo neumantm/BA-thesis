@@ -82,6 +82,13 @@ Therefore, a small script was created, which does all that automatically and res
 
 \section{Eclipse Plugin Architecture}
 \label{sec:ch4:s3}
+One possible approach that was investigated is to implement the plugin as an extension to Mylyn.
+As described in \cref{ssec:ch2:ss2.3}, Mylyn is an \gls{Eclipse} plugin for managing tasks and can therefore also be used to manage plugins.
+However, many of the required features from \cref{sec:ch3:s1} could to our knowledge not be implemented in an Mylyn extension without adding some major changes to Mylyn itself.
+Any changes proposed for Mylyn itself would need to be discussed with the community and justified to the maintainers causing, in the best case, major delay for the implementation of the extension.
+In the worst case, some changes may be rejected completely, preventing the implementation of some of the required features.
+Therefore, it was decided to create a new \gls{Eclipse} extension.
+
 As described in \cref{sec:ch3:s3}, the plugin is split into several components for portability reasons.
 Therefore, the prototype actually consists of a total of four eclipse plugins, as can be seen in \cref{fig:c4:component_diagram}.
 Moreover, it was decided to use a model-driven software development approach similar to the one described by Beydeda et al. \cite{beydeda2005model}.
